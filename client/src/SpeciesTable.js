@@ -4,7 +4,7 @@ import './SpeciesTable.css';
 function SpeciesTable() {
   const [plants, setPlants] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(3580);
+  const [totalPages, setTotalPages] = useState();
   const [searchTerm, setSearchTerm] = useState('');
   const [searchOption, setSearchOption] = useState('scientific_name');
 

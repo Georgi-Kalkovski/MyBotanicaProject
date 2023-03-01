@@ -5,15 +5,15 @@ async function getAllPlants(req, res) {
   const page = req.query.page || 1;
   const limit = 10;
   const startIndex = (page - 1) * limit;
-  const url = req.url;
-  const searchTermRegex = /searchTerm=([^&]*)/;
-  const match = searchTermRegex.exec(url);
-  const searchTerm = match ? match[1] : "";
-  const pagesCount = await Plants.find({ genus: new RegExp('^' + searchTerm + '$', "i") }).count();
+  const searchTerm = req.query.searchTerm;
+  const searchOption = req.query.searchOption;
+  const query = {};
+  query[searchOption] = new RegExp(searchTerm, "i");
+  const pagesCount = await Plants.find(query).count();
   let plants;
 
   if (searchTerm != '') {
-    plants = await Plants.find({ genus: new RegExp('^' + searchTerm + '$', "i") }).skip(startIndex).limit(10);
+    plants = await Plants.find(query).skip(startIndex).limit(10);
   } else {
     plants = await Plants.find({}).skip(startIndex).limit(10);
   }
@@ -28,6 +28,8 @@ async function getAllPlants(req, res) {
 async function getSearch(req, res) {
   const searchTerm = req.body.searchTerm;
   const searchOption = req.body.searchOption;
+  console.log(searchTerm)
+  console.log(searchOption)
 
   // Filter the plants based on the search term and option
   const filteredPlants = plants.filter((plant) =>
