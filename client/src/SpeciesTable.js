@@ -4,17 +4,19 @@ import './SpeciesTable.css';
 function SpeciesTable() {
   const [plants, setPlants] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(35800);
+  const [totalPages, setTotalPages] = useState(3580);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchOption, setSearchOption] = useState('scientific_name');
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api/plants?page=${currentPage}`)
+    fetch(`http://localhost:3001/api/plants?page=${currentPage}&searchTerm=${searchTerm}&searchOption=${searchOption}`)
       .then((res) => res.json())
       .then((data) => {
         setPlants(data.plants);
         setTotalPages(data.totalPages);
       })
       .catch((err) => console.log(err));
-  }, [currentPage]);
+  }, [currentPage, searchTerm, searchOption]);
 
   const handlePrevClick = () => {
     if (currentPage > 1) {
@@ -52,9 +54,30 @@ function SpeciesTable() {
     return buttons;
   };
 
+  const handleSearch = () => {
+    setCurrentPage(1);
+  };
+
+  const filteredPlants = plants.filter((plant) =>
+    plant[searchOption].toLowerCase().includes(searchTerm.toLowerCase())
+  ).slice((currentPage - 1) * 10, currentPage * 10);
+
   return (
     <div className='centeringThings'>
       <h2>Species Table</h2>
+
+      <div className='search'>
+        <input type='text' placeholder='Search...' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+        <select value={searchOption} onChange={(e) => setSearchOption(e.target.value)}>
+          <option value='scientific_name'>Scientific Name</option>
+          <option value='common_name'>Common Name</option>
+          <option value='family'>Family</option>
+          <option value='family_common_name'>Family Common Name</option>
+        </select>
+        <button onClick={handleSearch}>Search</button>
+      </div>
+
+
       <table align='center'>
         <thead>
           <tr>
