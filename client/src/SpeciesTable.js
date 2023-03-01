@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './SpeciesTable.css';
 
 function SpeciesTable() {
   const [plants, setPlants] = useState([]);
@@ -27,12 +28,34 @@ function SpeciesTable() {
     }
   };
 
-  console.log(plants)
+  const handlePageClick = (page) => {
+    setCurrentPage(page);
+  };
+
+  const renderPageButtons = () => {
+    let buttons = [];
+
+    for (let i = 1; i <= totalPages; i++) {
+      if (i === currentPage) {
+        buttons.push(<span className="current-page" key={i}>{i}</span>);
+      } else if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
+        buttons.push(
+          <button key={i} onClick={() => handlePageClick(i)}>
+            {i}
+          </button>
+        );
+      } else if (buttons.length > 0 && buttons[buttons.length - 1].key !== 'ellipsis') {
+        buttons.push(<span key="ellipsis">...</span>);
+      }
+    }
+
+    return buttons;
+  };
 
   return (
-    <div>
+    <div className='centeringThings'>
       <h2>Species Table</h2>
-      <table>
+      <table align='center'>
         <thead>
           <tr>
             <th>Scientific Name</th>
@@ -52,9 +75,19 @@ function SpeciesTable() {
           ))}
         </tbody>
       </table>
-      <button onClick={handlePrevClick}>Prev</button>
-      <span>{currentPage}</span>
-      <button onClick={handleNextClick}>Next</button>
+      <div className="pagination">
+        <button
+          className={`prev ${currentPage === 1 ? 'disabled' : ''}`}
+          onClick={handlePrevClick}
+          disabled={currentPage === 1}
+        >
+          <span>&#8592;</span> Prev
+        </button>
+        {renderPageButtons()}
+        <button className="next" onClick={handleNextClick} disabled={currentPage === totalPages}>
+          Next <span>&#8594;</span>
+        </button>
+      </div>
     </div>
   );
 }

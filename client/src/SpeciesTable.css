@@ -1,0 +1,14 @@
+span.current-page {
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 0 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #000000;
+    color: #ccc;
+  }
+
+  .centeringThings {
+    text-align: center;
+    justify-content: center;
+  }
