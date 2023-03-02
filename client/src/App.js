@@ -1,5 +1,5 @@
 import React from 'react';
-import SpeciesTable from './SpeciesTable';
+import SpeciesTable from './components/SpeciesTable';
 
 function App() {
   return (
