@@ -1,17 +1,22 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import './TableBody.css';
 
 function TableBody({ plants }) {
   return (
-    <tbody>
+    <Container className='table-body-container'>
       {plants.map((plant) => (
-        <tr key={plant.id}>
-          <td>{plant.scientific_name}</td>
-          <td>{plant.common_name}</td>
-          <td>{plant.family}</td>
-          <td>{plant.family_common_name}</td>
-        </tr>
-      ))}
-    </tbody>
+        <Row key={plant.id} className='table-row'>
+          <Col>{plant.scientific_name}</Col>
+          <Col>{plant.common_name}</Col>
+          <Col>{plant.family}</Col>
+          <Col>{plant.family_common_name}</Col>
+        </Row>
+      ))
+      }
+    </Container >
   );
 }
 

@@ -3,7 +3,7 @@ const Plants = require('../models/plants.model');
 async function getAllPlants(req, res) {
 
   const page = req.query.page || 1;
-  const limit = 10;
+  const limit = 20;
   const startIndex = (page - 1) * limit;
 
   const searchTerm = req.query.searchTerm;
@@ -11,17 +11,20 @@ async function getAllPlants(req, res) {
   const query = {};
 
   query[searchOption] = new RegExp(searchTerm, "i");
-  const pagesCount = await Plants.find(query).count();
-  let plants;
+
+  let plantsQuery = Plants.find({});
+  let countQuery = Plants.countDocuments({});
 
   if (searchTerm != '') {
-    plants = await Plants.find(query).skip(startIndex).limit(10);
-  } else if (plants == undefined) {
-    plants = await Plants.find({}).skip(startIndex).limit(10);
+    plantsQuery = Plants.find(query);
+    countQuery = Plants.find(query).countDocuments();
   }
 
+  const pagesCount = await countQuery;
+  const plants = await plantsQuery.skip(startIndex).limit(20);
+
   res.json({
-    totalPages: searchTerm === '' ? Math.ceil(await Plants.countDocuments() / limit) : pagesCount,
+    totalPages: Math.ceil(pagesCount / limit),
     currentPage: Number(page),
     plants: plants,
   });

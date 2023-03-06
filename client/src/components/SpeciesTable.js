@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './SpeciesTable.css';
+import Search from './Search';
 import TableHeader from './TableHeader';
 import TableBody from './TableBody';
 import Pagination from './Pagination';
@@ -38,19 +39,20 @@ function SpeciesTable() {
   };
 
   const renderPageButtons = () => {
-    let buttons = [];
-
-    for (let i = 1; i <= totalPages; i++) {
-      if (i === currentPage) {
-        buttons.push(<span className="current-page" key={i}>{i}</span>);
-      } else if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
-        buttons.push(
-          <button key={i} onClick={() => handlePageClick(i)}>
-            {i}
-          </button>
-        );
-      } else if (buttons.length > 0 && buttons[buttons.length - 1].props.children !== '...') {
-        buttons.push(<span key={i}>...</span>);
+    const buttons = [];
+    if (plants.length > 0) {
+      for (let i = 1; i <= totalPages; i++) {
+        if (i === currentPage) {
+          buttons.push(<span className="current-page" key={i}>{i}</span>);
+        } else if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
+          buttons.push(
+            <button key={i} onClick={() => handlePageClick(i)}>
+              {i}
+            </button>
+          );
+        } else if (buttons.length > 0 && buttons[buttons.length - 1].props.children !== '...') {
+          buttons.push(<span key={i}>...</span>);
+        }
       }
     }
     return buttons;
@@ -58,35 +60,27 @@ function SpeciesTable() {
 
 
   return (
-    <div className="species-table">
-      <div className="table-header">
-        <h1>Plant Species</h1>
-        <div className="search-box">
-          <input
-            type="text"
-            placeholder="Search..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <select value={searchOption} onChange={(e) => setSearchOption(e.target.value)}>
-            <option value="scientific_name">Scientific Name</option>
-            <option value="common_name">Common Name</option>
-            <option value="family">Family</option>
-            <option value="family_common_name">Family Common Name</option>
-          </select>
-        </div>
+    <div className='species-table'>
+      <div>
+        <Search
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          searchOption={searchOption}
+          setSearchOption={setSearchOption}
+        />
+
+        <table className='species-container'>
+          {/* <TableHeader /> */}
+          <TableBody plants={plants} />
+        </table>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          handlePrevClick={handlePrevClick}
+          handleNextClick={handleNextClick}
+          renderPageButtons={renderPageButtons}
+        />
       </div>
-      <table className='species-table'>
-        <TableHeader />
-        <TableBody plants={plants} />
-      </table>
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        handlePrevClick={handlePrevClick}
-        handleNextClick={handleNextClick}
-        renderPageButtons={renderPageButtons}
-      />
     </div>
   );
 }
