@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './SpeciesTable.css';
 import Search from './Search';
-import TableHeader from './TableHeader';
-import TableBody from './TableBody';
+import Body from './Body';
 import Pagination from './Pagination';
+import './Main.css';
 
 function SpeciesTable() {
   const [plants, setPlants] = useState([]);
@@ -71,7 +70,7 @@ function SpeciesTable() {
 
         <table className='species-container'>
           {/* <TableHeader /> */}
-          <TableBody plants={plants} />
+          <Body plants={plants} />
         </table>
         <Pagination
           currentPage={currentPage}

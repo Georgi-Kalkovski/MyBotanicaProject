@@ -14,6 +14,7 @@ function Search({ searchTerm, setSearchTerm, searchOption, setSearchOption }) {
         <select value={searchOption} onChange={(e) => setSearchOption(e.target.value)}>
           <option value="scientific_name">Scientific Name</option>
           <option value="common_name">Common Name</option>
+          <option value="genus">Genus</option>
           <option value="family">Family</option>
           <option value="family_common_name">Family Common Name</option>
         </select>

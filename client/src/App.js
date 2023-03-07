@@ -1,10 +1,11 @@
 import React from 'react';
-import SpeciesTable from './components/SpeciesTable';
+import SpeciesMain from './components/Main';
+import './App.css';
 
 function App() {
   return (
     <div>
-      <SpeciesTable/>
+      <SpeciesMain/>
     </div>
   );
 }
