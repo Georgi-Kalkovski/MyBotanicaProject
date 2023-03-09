@@ -1,12 +1,19 @@
 import React from 'react';
-import SpeciesMain from './components/Main';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './components/Home';
+import Details from './components/Details';
 import './App.css';
 
 function App() {
   return (
-    <div>
-      <SpeciesMain/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/plants" element={<Home />} />
+        <Route path="/plants/:id" element={<Details />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -30,6 +30,13 @@ async function getAllPlants(req, res) {
   });
 }
 
+async function getPlantById(req, res) {
+  const plantId = req.params.id;
+    const plant = await Plants.findOne({ id: plantId });
+    res.json({plant: plant});
+}
+
 module.exports = {
   getAllPlants,
+  getPlantById,
 };

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Search from './Search';
 import Body from './Body';
 import Pagination from './Pagination';
-import './Main.css';
+import './Home.css';
 
-function SpeciesTable() {
+function Home() {
   const [plants, setPlants] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState();
@@ -69,7 +69,6 @@ function SpeciesTable() {
         />
 
         <table className='species-container'>
-          {/* <TableHeader /> */}
           <Body plants={plants} />
         </table>
         <Pagination
@@ -84,4 +83,4 @@ function SpeciesTable() {
   );
 }
 
-export default SpeciesTable;
+export default Home;

@@ -6,13 +6,17 @@ import Col from 'react-bootstrap/Col';
 import './Body.css';
 
 function Body({ plants }) {
+  console.log(plants)
   return (
     <Container className='cards'>
       {plants.map((plant) => (
-        <a>
+
+        <a className='details-link' href={'plants/' + plant.id} key={plant.id}>
           <Row key={plant.id} className='card'>
             <Col className='cropped image'>
-              <Image src={plant.image_url}/>
+              {plant.image_url && (
+                <Image src={plant.image_url.replace('floristic', 'plantnet')} />
+              )}
             </Col>
             <Col className='col-text'>
               <h3>{plant.scientific_name}</h3>

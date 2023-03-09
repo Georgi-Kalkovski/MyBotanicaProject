@@ -4,7 +4,6 @@ span.current-page {
   margin: 0 4px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #000000;
   color: #ccc;
 }
 
@@ -18,4 +17,9 @@ span.current-page {
 
 .margin-bottom {
   margin-bottom: 5%;
+}
+
+span.current-page,
+.cropped {
+  background-color: #506e61;
 }

@@ -18,17 +18,31 @@
     height: 100px;
     overflow: hidden;
     border-radius: 0.2cm;
-    background-color: #506e61;
-    
+
 }
 
 .cropped img {
     max-width: 200px;
-    margin: -135px 0px 20px 0px;
+    
 }
 
 h3,
 p {
     font-size: 65%;
     margin: 0px 0px;
+}
+
+.details-link {
+    cursor: pointer;
+    text-decoration: none;
+    color: #283630;
+}
+
+.details-link:hover {
+    cursor: pointer;
+    padding: 2px;
+    margin: -4px;
+    border: 2px solid #506e61;
+    border-radius: 3%;
+    opacity: 0.8;
 }
