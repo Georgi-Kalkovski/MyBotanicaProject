@@ -23,7 +23,11 @@ function Body({ plants }) {
               )}
             </Col>
             <Col className='col-text'>
-              <h2><img className='food-svg' src={foodSVG} /><img className='vegetable-svg' src={vegetableSVG} />{plant.scientific_name}</h2>
+              <h2>
+                {plant.edible !== "false" ? <img className='food-svg' src={foodSVG} /> : ''}
+                {plant.vegetable !== "false" ? <img className='vegetable-svg' src={vegetableSVG} /> : ''}
+                {plant.scientific_name}
+              </h2>
               <h3>{plant.common_name}</h3>
             </Col>
           </Row>
