@@ -1,5 +1,6 @@
 .container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 10px 30px;
 }
@@ -7,29 +8,29 @@
 .row {
     flex-direction: column;
     text-align: left;
-}
-
-.col-text {
-    padding-left: 5%;
+    width: 350px;
 }
 
 .cropped {
-    width: 200px;
-    height: 100px;
+    width: 350px;
+    height: 175px;
     overflow: hidden;
     border-radius: 0.2cm;
 
 }
 
 .cropped img {
-    max-width: 200px;
-    
+    max-width: 350px;
+    min-width: 100%;
 }
 
-h3,
-p {
-    font-size: 65%;
+h2,
+h3 {
     margin: 0px 0px;
+}
+
+h3 {
+    color: #506e61;
 }
 
 .details-link {
@@ -45,4 +46,10 @@ p {
     border: 2px solid #506e61;
     border-radius: 3%;
     opacity: 0.8;
+}
+
+.food-svg,
+.vegetable-svg {
+    width: 5%;
+    padding-right: 10px;
 }

@@ -1,0 +1,30 @@
+.search-input,
+.search-select {
+    border-style: #283630;
+    border-radius: 5px;
+    margin: 0 2px;
+    font-size: x-large;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.search-input {
+    width: 25%;
+    min-width: 25%;
+}
+
+.search-select {
+    color: #d9e4de !important;
+    background-color: #283630 !important;
+    cursor: pointer;
+}
+
+.dropdown-option {
+    background-color: #506e61;
+}
+
+.dropdown-option:hover {
+  background-color: #283630;
+}
+

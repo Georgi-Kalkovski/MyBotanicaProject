@@ -21,7 +21,7 @@ function Details() {
       <p>Bibliography: {plant.bibliography}</p>
       <p>Common Name: {plant.common_name}</p>
       <p>Family Common Name: {plant.family_common_name}</p>
-      <p>Image Url: {plant.image_url != undefined ? plant.image_url.replace('floristic', 'plantnet') : plant.image_url}</p>
+      <p>Image Url: {plant.image_url !== undefined ? plant.image_url.replace('bs.floristic.org', 'bs.plantnet.org') : plant.image_url}</p>
       <p>Flower Color: {plant.flower_color}</p>
       <p>Flower Conspicuous: {plant.flower_conspicuous}</p>
       <p>Foliage Color: {plant.foliage_color}</p>

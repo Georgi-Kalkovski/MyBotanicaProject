@@ -50,7 +50,7 @@ function Home() {
             </button>
           );
         } else if (buttons.length > 0 && buttons[buttons.length - 1].props.children !== '...') {
-          buttons.push(<span key={i}>...</span>);
+          buttons.push(<span key={i} className="pagination-dots">...</span>);
         }
       }
     }

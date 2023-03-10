@@ -3,7 +3,11 @@ import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
 import './Body.css';
+
+import foodSVG from './svg/food.svg'
+import vegetableSVG from './svg/vegetable.svg'
 
 function Body({ plants }) {
   console.log(plants)
@@ -15,13 +19,12 @@ function Body({ plants }) {
           <Row key={plant.id} className='card'>
             <Col className='cropped image'>
               {plant.image_url && (
-                <Image src={plant.image_url.replace('floristic', 'plantnet')} />
+                <Image src={plant.image_url.replace('bs.floristic.org', 'bs.plantnet.org')} />
               )}
             </Col>
             <Col className='col-text'>
-              <h3>{plant.scientific_name}</h3>
-              <p>{plant.common_name}</p>
-              <p>{plant.genus}</p>
+              <h2><img className='food-svg' src={foodSVG} /><img className='vegetable-svg' src={vegetableSVG} />{plant.scientific_name}</h2>
+              <h3>{plant.common_name}</h3>
             </Col>
           </Row>
         </a>

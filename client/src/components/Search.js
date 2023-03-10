@@ -1,3 +1,4 @@
+import './Search.css';
 
 function Search({ searchTerm, setSearchTerm, searchOption, setSearchOption }) {
   return (
@@ -6,12 +7,17 @@ function Search({ searchTerm, setSearchTerm, searchOption, setSearchOption }) {
       <h1>Plant Species</h1>
       <div className="search-box">
         <input
+          className='search-input'
           type="text"
           placeholder="Search..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <select value={searchOption} onChange={(e) => setSearchOption(e.target.value)}>
+        <select
+          className="search-select"
+          value={searchOption}
+          onChange={(e) => setSearchOption(e.target.value)}
+        >
           <option value="scientific_name">Scientific Name</option>
           <option value="common_name">Common Name</option>
           <option value="genus">Genus</option>

@@ -1,0 +1,37 @@
+span.current-page {
+    background-color: #283630;
+}
+
+.pagination button {
+    background-color: #506e61;
+}
+
+.pagination button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    border: 2px solid #283630;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    border: none;
+    cursor: inherit;
+}
+
+.pagination-dots {
+    cursor: default;
+}
+
+span.current-page,
+.pagination button {
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 0px 2px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #d9e4de;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+}
