@@ -31,9 +31,9 @@ async function getAllPlants(req, res) {
 }
 
 async function getPlantByScientificName(req, res) {
-  const plantName = req.params.scientific_name;
-    const plant = await Plants.findOne({ scientific_name: plantName.replace('_', ' ') });
-    res.json({plant: plant});
+  const plantName = req.params.scientific_name.replace('_', ' ');
+  const plant = await Plants.findOne({ scientific_name: plantName });
+  res.json({ plant: plant });
 }
 
 module.exports = {

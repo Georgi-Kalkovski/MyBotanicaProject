@@ -1,6 +1,6 @@
 import './Search.css';
 
-function Search({ searchTerm, setSearchTerm, searchOption, setSearchOption }) {
+function Search({ setCurrentPage, searchTerm, setSearchTerm, searchOption, setSearchOption }) {
   return (
 
     <div className="table-header">
@@ -11,15 +11,15 @@ function Search({ searchTerm, setSearchTerm, searchOption, setSearchOption }) {
           type="text"
           placeholder="Search..."
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={(e) => { setSearchTerm(e.target.value); setCurrentPage(1) }}
         />
         <select
           className="search-select"
           value={searchOption}
-          onChange={(e) => setSearchOption(e.target.value)}
+          onChange={(e) => { setSearchOption(e.target.value); setCurrentPage(1) }}
         >
+          <option value="common_names">Common Name</option>
           <option value="scientific_name">Scientific Name</option>
-          <option value="common_name">Common Name</option>
           <option value="genus">Genus</option>
           <option value="family">Family</option>
           <option value="family_common_name">Family Common Name</option>

@@ -1,0 +1,6 @@
+<svg class="svg-inline--fa fa-clone fa-w-16 has-text-success" aria-hidden="true" focusable="false" data-prefix="fad" data-icon="clone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+    <g class="fa-group">
+        <path class="fa-secondary" fill="#506e61" d="M48 512a48 48 0 0 1-48-48V176a48 48 0 0 1 48-48h48v208a80.09 80.09 0 0 0 80 80h208v48a48 48 0 0 1-48 48H48z"></path>
+        <path class="fa-primary" fill="#283630" d="M512 48v288a48 48 0 0 1-48 48H176a48 48 0 0 1-48-48V48a48 48 0 0 1 48-48h288a48 48 0 0 1 48 48z"></path>
+    </g>
+</svg>

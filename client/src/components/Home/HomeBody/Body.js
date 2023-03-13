@@ -10,7 +10,6 @@ import foodSVG from './svg/food.svg'
 import vegetableSVG from './svg/vegetable.svg'
 
 function Body({ plants }) {
-  console.log(plants)
   return (
     <Container className='cards'>
       {plants.map((plant) => (
@@ -28,7 +27,7 @@ function Body({ plants }) {
                 {plant.vegetable !== "false" ? <img className='vegetable-svg' src={vegetableSVG} /> : ''}
                 {plant.scientific_name}
               </h2>
-              <h3>{plant.common_name}</h3>
+              <h3>{plant.common_names.split(',')[0] !== undefined ? plant.common_names.split(',')[0] : plant.common_name}</h3>
             </Col>
           </Row>
         </a>

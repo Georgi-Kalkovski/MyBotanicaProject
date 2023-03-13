@@ -1,0 +1,75 @@
+.details-main {
+  text-align: left;
+  margin-top: 3%;
+}
+
+hr {
+  background-color: #506e61;
+  border: none;
+  display: block;
+  height: 2px;
+  margin: 1.5rem 0;
+}
+
+.sidebar {
+  width: 15%;
+  position: fixed;
+  bottom: 0;
+  overflow-y: auto;
+  transition: 1s;
+}
+
+.sidebar li a {
+  font-size: x-large;
+  cursor: pointer;
+}
+
+.content {
+  width: 75%;
+  margin-left: 17%;
+  margin-right: 5%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.svg {
+  width: 1em;
+}
+
+.main {
+  display: flex;
+}
+
+.main-card {
+  display: contents;
+}
+
+.main-card-text {
+  margin-left: 20px;
+  margin-top: 3%;
+}
+
+.sub-row {
+  display: flex;
+}
+
+.sub-second-col {
+margin-left: 15%;
+}
+
+@media (pointer:none),
+(pointer:coarse) {
+  #main {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .content {
+    margin-left: 0%;
+  }
+}

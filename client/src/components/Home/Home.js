@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Search from './Search';
-import Body from './Body';
-import Pagination from './Pagination';
+import Search from './HomeBody/Search';
+import Body from './HomeBody/Body';
+import Pagination from './HomeBody/Pagination';
 import './Home.css';
 
 function Home() {
@@ -9,7 +9,7 @@ function Home() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState();
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchOption, setSearchOption] = useState('scientific_name');
+  const [searchOption, setSearchOption] = useState('common_name');
 
   useEffect(() => {
     fetch(`http://localhost:3001/api/plants?page=${currentPage}&searchTerm=${searchTerm}&searchOption=${searchOption}`)
@@ -66,6 +66,7 @@ function Home() {
           setSearchTerm={setSearchTerm}
           searchOption={searchOption}
           setSearchOption={setSearchOption}
+          setCurrentPage={setCurrentPage}
         />
 
         <table className='species-container'>
