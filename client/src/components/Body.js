@@ -15,8 +15,8 @@ function Body({ plants }) {
     <Container className='cards'>
       {plants.map((plant) => (
 
-        <a className='details-link' href={'plants/' + plant.id} key={plant.id}>
-          <Row key={plant.id} className='card'>
+        <a className='details-link' href={'plants/' + plant.scientific_name.replace(' ', '_')} key={plant.scientific_name}>
+          <Row key={plant.scientific_name} className='card'>
             <Col className='cropped image'>
               {plant.image_url && (
                 <Image src={plant.image_url.replace('bs.floristic.org', 'bs.plantnet.org')} />

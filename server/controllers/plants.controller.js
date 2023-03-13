@@ -30,13 +30,13 @@ async function getAllPlants(req, res) {
   });
 }
 
-async function getPlantById(req, res) {
-  const plantId = req.params.id;
-    const plant = await Plants.findOne({ id: plantId });
+async function getPlantByScientificName(req, res) {
+  const plantName = req.params.scientific_name;
+    const plant = await Plants.findOne({ scientific_name: plantName.replace('_', ' ') });
     res.json({plant: plant});
 }
 
 module.exports = {
   getAllPlants,
-  getPlantById,
+  getPlantByScientificName,
 };
