@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link as ScrollLink } from 'react-scroll';
+import SideLink from './Sidebar/SideLink'
 import { specSVG, growingSVG, imagesSVG, distribSVG, synonymsSVG } from './svg/svgImports';
 
 
@@ -23,46 +23,13 @@ function Sidebar() {
     return (
         <div className="sidebar" style={{ top: topPosition }}>
             <ul>
-                <li>
-                    <ScrollLink to="main" smooth={true}>
-                        Main
-                    </ScrollLink>
-                </li>
-                <li>
-                    <ScrollLink to="specifications" smooth={true}>
-                        <img className='svg' src={specSVG} />
-                        <span> Specifications</span>
-                    </ScrollLink>
-                </li>
-                <li>
-                    <ScrollLink to="growing" smooth={true}>
-                        <img className='svg' src={growingSVG} />
-                        <span> Growing</span>
-                    </ScrollLink>
-                </li>
-                <li>
-                    <ScrollLink to="images" smooth={true}>
-                        <img className='svg' src={imagesSVG} />
-                        <span> Images</span>
-                    </ScrollLink>
-                </li>
-                <li>
-                    <ScrollLink to="distribution" smooth={true}>
-                        <img className='svg' src={distribSVG} />
-                        <span> Distribution</span>
-                    </ScrollLink>
-                </li>
-                <li>
-                    <ScrollLink to="synonyms" smooth={true}>
-                        <img className='svg' src={synonymsSVG} />
-                        <span> Synonyms</span>
-                    </ScrollLink>
-                </li>
-                <li>
-                    <ScrollLink to="model" smooth={true}>
-                        [[[Model]]]
-                    </ScrollLink>
-                </li>
+                <SideLink link='Main' />
+                <SideLink link='Specifications' linkSVG={specSVG} />
+                <SideLink link='Growing' linkSVG={growingSVG} />
+                <SideLink link='Images' linkSVG={imagesSVG} />
+                <SideLink link='Distribution' linkSVG={distribSVG} />
+                <SideLink link='Synonyms' linkSVG={synonymsSVG} />
+                <SideLink link='[[[Model]]]'/>
             </ul>
         </div>
     );
