@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Search from './HomeBody/Search';
-import Body from './HomeBody/Body';
-import Pagination from './HomeBody/Pagination';
+import Search from './Home/Search';
+import Body from './Home/Body';
+import Pagination from './Home/Pagination';
 import './Home.css';
 
 function Home() {

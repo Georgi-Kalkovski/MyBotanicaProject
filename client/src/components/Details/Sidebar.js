@@ -1,20 +1,16 @@
 import { useEffect, useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
-import growingSVG from './svg/growing.svg';
-import specSVG from './svg/spec.svg';
-import imagesSVG from './svg/images.svg';
-import distribSVG from './svg/distrib.svg';
-import synonymsSVG from './svg/synonyms.svg';
+import { specSVG, growingSVG, imagesSVG, distribSVG, synonymsSVG } from './svg/svgImports';
 
 
 function Sidebar() {
-    const [topPosition, setTopPosition] = useState('30%');
+    const [topPosition, setTopPosition] = useState('10%');
 
     useEffect(() => {
         function handleScroll() {
             const currentPosition = window.pageYOffset;
             if (currentPosition < window.innerHeight * 0.1) {
-                setTopPosition(`${30 - currentPosition * 0.1}%`);
+                setTopPosition(`${10 - currentPosition * 0.1}%`);
             } else {
                 setTopPosition('0');
             }
@@ -58,13 +54,13 @@ function Sidebar() {
                 </li>
                 <li>
                     <ScrollLink to="synonyms" smooth={true}>
-                    <img className='svg' src={synonymsSVG} />
+                        <img className='svg' src={synonymsSVG} />
                         <span> Synonyms</span>
                     </ScrollLink>
                 </li>
                 <li>
                     <ScrollLink to="model" smooth={true}>
-                        Model
+                        [[[Model]]]
                     </ScrollLink>
                 </li>
             </ul>

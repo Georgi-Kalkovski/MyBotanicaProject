@@ -34,8 +34,15 @@ ul {
   list-style-type: none;
 }
 
-.svg {
-  width: 1em;
+.svg,
+.unknown {
+  height: 1em;
+}
+
+.unknown {
+position: relative;
+top: 2px;
+color: red;
 }
 
 .main {

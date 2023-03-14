@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Sidebar from './Sidebar';
-import Content from './Content';
+import Sidebar from './Details/Sidebar';
+import Content from './Details/Content';
 import './Details.css';
 
 function Details() {
@@ -14,9 +14,9 @@ function Details() {
   }, [id]);
   return (
     <div className='details-main'>
-      <Content plant={plant}/>
       <Sidebar />
-      
+      <Content plant={plant} />
+
     </div>
   );
 }
