@@ -1,7 +1,7 @@
 import React from 'react';
 import { imagesSVG } from '../Content/svgImports';
 
-function Synonyms({ plant }) {
+function Images({ plant }) {
     let synonyms = [];
 
     if (plant.synonyms) {
@@ -21,4 +21,4 @@ function Synonyms({ plant }) {
     );
 }
 
-export default Synonyms;
+export default Images;
