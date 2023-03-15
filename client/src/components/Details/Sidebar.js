@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import SideLink from './Sidebar/SideLink'
-import { specSVG, growingSVG, imagesSVG, distribSVG, synonymsSVG } from './svg/svgImports';
+import { specSVG, growingSVG, imagesSVG, distribSVG, synonymsSVG } from './Content/svgImports';
 
 
 function Sidebar() {

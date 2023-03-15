@@ -1,43 +1,22 @@
 import React from "react";
-import { unknownCheck } from './functions';
-import Col from 'react-bootstrap/Col';
-import { growingSVG } from "../svg/svgImports";
+import { unknownCheck, scale, levelLength, lightLevels, atmHumLevels, soilHumLevels, soilNutriLevels, soilSalinityLevels, soilTextureLevels } from './functions';
+import { Row, Col } from 'react-bootstrap';
+import { cloudsSVG, sunSVG, cookSVG, saltSVG, texture1SVG, texture2SVG, growingSVG, waterdropSVG, waterbucketSVG } from "../Content/svgImports";
 
 function Growing({ plant }) {
     let distributions = [];
-    let light = '';
-    let atmHum = '';
+
+    let light = lightLevels[plant.light] || lightLevels['-1'];
+    let atmHum = atmHumLevels[plant.atmospheric_humidity] || atmHumLevels['-1'];
+    let soilHum = soilHumLevels[plant.ground_humidity] || soilHumLevels['-1'];
+    let soilNutri = soilNutriLevels[plant.soil_nutriments] || soilNutriLevels['-1'];
+    let soilSalinity = soilSalinityLevels[plant.soil_salinity] || soilSalinityLevels['-1'];
+    let soilTexture = soilTextureLevels[plant.soil_salinity] || soilTextureLevels['-1'];
 
     if (plant.distributions) {
         distributions = plant.distributions.split(',');
     }
 
-    switch (plant.light) {
-        case '0': light = 'Dark night (< 1 lux)'; break;
-        case '1': light = 'Full moon on a clear night (10 lux)'; break;
-        case '2': light = 'Public areas with dark surroundings (50 lux)'; break;
-        case '3': light = 'Very dark overcast day (100 lux)'; break;
-        case '4': light = 'Overcast day (1000 lux)'; break;
-        case '5': light = 'Cloudy day (5 000 lux)'; break;
-        case '6': light = 'Full daylight without direct sunlight (10 000 lux)'; break;
-        case '7': light = 'Full daylight with some direct sunlight (50 000 lux)'; break;
-        case '8': light = 'Full daylight with a lot of direct sunlight (75 000 lux)'; break;
-        case '9': light = 'Direct sunlight (100 000 lux)'; break;
-      }
-    
-      switch (plant.atmospheric_humidity) {
-        case '0': atmHum = 'Less than 10%'; break;
-        case '1': atmHum = '10%'; break;
-        case '2': atmHum = '20%'; break;
-        case '3': atmHum = '30%'; break;
-        case '4': atmHum = '40%'; break;
-        case '5': atmHum = '50%'; break;
-        case '6': atmHum = '60%'; break;
-        case '7': atmHum = '70%'; break;
-        case '8': atmHum = '80%'; break;
-        case '9': atmHum = '> 90%'; break;
-      }
-    
     return (
         <>
             {/* GROWING */}
@@ -46,8 +25,8 @@ function Growing({ plant }) {
                     <img className='svg' src={growingSVG} />
                     <span> Growing</span>
                 </h2>
-                <div className='sub-row'>
-                    <Col>
+                <Row className='sub-row'>
+                    <Col className='sub-first-col'>
                         <p>Light: {unknownCheck(light)}</p>
                         <p>Atmospheric Humidity: {unknownCheck(atmHum)}</p>
                         <p>Ph: Best between {unknownCheck(plant.ph_minimum)} and {unknownCheck(plant.ph_maximum)}</p>
@@ -55,26 +34,26 @@ function Growing({ plant }) {
                         <p>[[[Temperature: Best between unknown°C and unknown°C]]]</p>
                     </Col>
                     <Col className='sub-second-col'>
-                        <p>[[[Cloud Sun]]]</p>
-                        <p>[[[Wet]]]</p>
+                        <p>{scale(cloudsSVG, levelLength(lightLevels), plant.light, sunSVG)}</p>
+                        <p>{scale(waterdropSVG, levelLength(atmHumLevels), plant.atmospheric_humidity)}</p>
                     </Col>
-                </div>
+                </Row>
 
                 <h3>Soil</h3>
-                <div className='sub-row'>
-                    <Col>
-                        <p>[[[Soil humidity: unknown]]]</p>
-                        <p>[[[Soil nutriments: High (≈1000 µg N / l)]]]</p>
-                        <p>[[[Soil salinity: Untolerant]]]</p>
-                        <p>[[[Soil texture: unknown]]]</p>
+                <Row className='sub-row'>
+                    <Col className='sub-first-col'>
+                        <p>Soil humidity: {unknownCheck(soilHum)}</p>
+                        <p>Soil nutriments: {unknownCheck(soilNutri)}</p>
+                        <p>Soil salinity: {unknownCheck(soilSalinity)}</p>
+                        <p>Soil texture: {unknownCheck(soilTexture)}</p>
                     </Col>
                     <Col className='sub-second-col'>
-                        <p>[[[Humidity]]]</p>
-                        <p>[[[Nutriments]]]</p>
-                        <p>[[[Salinity]]]</p>
-                        <p>[[[Texture]]]</p>
+                        <p>{scale(waterbucketSVG, levelLength(soilHumLevels), plant.ground_humidity)}</p>
+                        <p>{scale(cookSVG, levelLength(soilNutriLevels), plant.soil_nutriments)}</p>
+                        <p>{scale(saltSVG, levelLength(soilSalinityLevels), plant.soil_salinity)}</p>
+                        <p>{scale(texture1SVG, levelLength(atmHumLevels), '', texture2SVG)}</p>
                     </Col>
-                </div>
+                </Row>
 
                 <h3>Calendar</h3>
                 <p>[[[Calendar]]]</p>

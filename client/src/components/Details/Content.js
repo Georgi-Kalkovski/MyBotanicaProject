@@ -10,29 +10,13 @@ function Content({ plant }) {
 
   return (
     <div className="content">
-
-      {/* MAIN */}
       <Main plant={plant} />
-
-      <hr></hr>
-
-      {/* SPECIFICATIONS */}
+      <hr />
       <Specification plant={plant} />
-
-      {/* GROWING */}
       <Growing plant={plant} />
-
-
-      {/* IMAGES */}
       <Images plant={plant} />
-
-      {/* DISTRIBUTION */}
       <Distribution plant={plant} />
-
-      {/* SYNONYMS */}
       <Synonyms plant={plant} />
-
-      {/* MODEL */}
       <Model plant={plant} />
     </div>
   );

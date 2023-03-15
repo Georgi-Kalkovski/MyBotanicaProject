@@ -1,0 +1,6 @@
+<svg class="svg-inline--fa fa-scrubber fa-w-16" aria-hidden="true" focusable="false" data-prefix="fad" data-icon="scrubber" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg="">
+    <g class="fa-group">
+        <path class="fa-secondary" fill="#506e61" d="M248,8C111,8,0,119,0,256S111,504,248,504,496,393,496,256,385,8,248,8Zm0,312a64,64,0,1,1,64-64A64,64,0,0,1,248,320Z"></path>
+        <path class="fa-primary" fill="#283630" d="M248,320a64,64,0,1,1,64-64A64,64,0,0,1,248,320Z"></path>
+    </g>
+</svg>

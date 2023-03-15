@@ -1,5 +1,5 @@
 import React from 'react';
-import { imagesSVG } from '../svg/svgImports';
+import { imagesSVG } from '../Content/svgImports';
 
 function Synonyms({ plant }) {
     let synonyms = [];

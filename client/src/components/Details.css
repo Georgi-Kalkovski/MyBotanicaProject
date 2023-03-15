@@ -1,3 +1,7 @@
+body, html {
+  margin: 2% 2%;
+}
+
 .details-main {
   text-align: left;
   margin-top: 3%;
@@ -12,7 +16,7 @@ hr {
 }
 
 .sidebar {
-  width: 15%;
+  width: 20%; /* increased width to fit more content */
   position: fixed;
   bottom: 0;
   overflow-y: auto;
@@ -20,13 +24,15 @@ hr {
 }
 
 .sidebar li a {
-  font-size: x-large;
+  font-size: large; /* decreased font size to fit more content */
   cursor: pointer;
+  display: block; /* added display block to show full link */
+  padding: 0.5rem 0; /* added padding for better spacing */
 }
 
 .content {
-  width: 75%;
-  margin-left: 17%;
+  width: 65%; /* decreased width to fit more content */
+  margin-left: 20%; /* increased margin to fit larger sidebar */
   margin-right: 5%;
 }
 
@@ -40,9 +46,9 @@ ul {
 }
 
 .unknown {
-position: relative;
-top: 2px;
-color: red;
+  position: relative;
+  top: 2px;
+  color: red;
 }
 
 .main {
@@ -60,15 +66,56 @@ color: red;
 
 .sub-row {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: auto;
+  margin-right: 40%;
 }
 
-.sub-second-col {
-margin-left: 15%;
+.sub-second-col p {
+  margin-bottom: 21px;
+}
+
+.div-scale {
+  flex: none;
+  width: 25%;
+}
+
+.scale-item {
+  min-height: 15px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.scale-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: auto 10px;
+}
+
+.gray-step {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  background-color: #90b6a6;
+  margin: 0 1px;
+  transform-style: preserve-3d;
+}
+
+.green-step {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  background-color: #283630;
+  margin: 0 1px;
+  transform-style: preserve-3d;
 }
 
 @media (pointer:none),
 (pointer:coarse) {
-  #main {
+  .main {
     flex-direction: column;
   }
 
@@ -78,5 +125,6 @@ margin-left: 15%;
 
   .content {
     margin-left: 0%;
+    width: 100%;
   }
 }

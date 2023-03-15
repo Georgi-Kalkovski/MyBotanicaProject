@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col, Image } from 'react-bootstrap';
-import { bookSVG } from '../svg/svgImports';
+import { bookSVG } from '../Content/svgImports';
 
 
 

@@ -1,6 +1,6 @@
 import { Col, Row } from 'react-bootstrap';
 import { unknownCheck, unknownVisibleCheck } from './functions';
-import { specSVG, flowerSVG, leafSVG, fruitSVG } from '../svg/svgImports';
+import { specSVG, flowerSVG, leafSVG, fruitSVG } from '../Content/svgImports';
 
 function Specifications({ plant }) {
     let distributions = [];
@@ -18,7 +18,7 @@ function Specifications({ plant }) {
             <Row key={plant.scientific_name} className='main-card'>
                 <p>{distributions[0]}</p>
                 <div className='sub-row'>
-                    <Col>
+                    <Col className='sub-first-col'>
                         <p>Height: {unknownCheck(plant.average_height_cm)} cm average</p>
                         <p>Growth habit: {unknownCheck(plant.growth_habit)}</p>
                         <p>Duration: { }</p>
