@@ -5,6 +5,7 @@ import Images from './Content/Images';
 import Distribution from './Content/Distribution';
 import Synonyms from './Content/Synonyms';
 import Model from './Content/Model';
+import './Content.css';
 
 function Content({ plant }) {
 

@@ -1,0 +1,13 @@
+.sidebar {
+    position: fixed;
+    bottom: 0;
+    overflow-y: auto;
+    transition: 1s;
+  }
+  
+  .sidebar li a {
+    font-size: large;
+    cursor: pointer;
+    display: block;
+    padding: 0.5rem 0;
+  }

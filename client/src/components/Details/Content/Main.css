@@ -1,0 +1,26 @@
+#main {
+    display: flex;
+}
+
+.main-cropped {
+    position: relative;
+}
+
+.main-card {
+    display: contents;
+}
+
+.search-img-svg {
+    position: absolute;
+    top: 8px;
+    right: 42%;
+    font-size: x-large;
+    z-index: 1;
+    filter:
+        drop-shadow(-1px -1px 0px #283630) drop-shadow(1px -1px 0px #283630) drop-shadow(1px 2px 0px #283630) drop-shadow(-1px 1px 0px #283630);
+}
+
+.main-card-text {
+    margin-left: 20px;
+    margin-top: 3%;
+}

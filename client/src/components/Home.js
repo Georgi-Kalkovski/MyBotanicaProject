@@ -8,8 +8,13 @@ function Home() {
   const [plants, setPlants] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState();
-  const [searchTerm, setSearchTerm] = useState('');
-  const [searchOption, setSearchOption] = useState('common_name');
+  const [searchTerm, setSearchTerm] = useState(localStorage.getItem('searchTerm') || '');
+  const [searchOption, setSearchOption] = useState(localStorage.getItem('searchOption') || 'common_name');
+
+  useEffect(() => {
+    localStorage.setItem('searchTerm', searchTerm);
+    localStorage.setItem('searchOption', searchOption);
+  }, [searchTerm, searchOption]);
 
   useEffect(() => {
     fetch(`http://localhost:3001/api/plants?page=${currentPage}&searchTerm=${searchTerm}&searchOption=${searchOption}`)
@@ -72,6 +77,7 @@ function Home() {
         <table className='species-container'>
           <Body plants={plants} />
         </table>
+        
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}

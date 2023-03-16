@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
@@ -14,7 +15,7 @@ function Body({ plants }) {
     <Container className='cards'>
       {plants.map((plant) => (
 
-        <a className='details-link' href={'plants/' + plant.scientific_name.replace(' ', '_')} key={plant.scientific_name}>
+        <Link className='details-link' to={'plants/' + plant.scientific_name.replace(' ', '_')} key={plant.scientific_name}>
           <Row key={plant.scientific_name} className='card'>
             <Col className='cropped image'>
               {plant.image_url && (
@@ -30,7 +31,7 @@ function Body({ plants }) {
               <h3>{plant.common_names.split(',')[0] !== undefined ? plant.common_names.split(',')[0] : plant.common_name}</h3>
             </Col>
           </Row>
-        </a>
+        </Link>
       ))
       }
     </Container >
