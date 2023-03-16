@@ -1,0 +1,27 @@
+.breadcrumb {
+    width: 65%;
+    margin-left: 17%;
+}
+
+.breadcrumb :last-child span {
+    visibility: hidden;
+}
+
+.breadcrumb-delimiter {
+    padding: 0 5px;
+    color: #506e61;
+}
+
+.breadcrumb-item {
+    color: #283630;
+    list-style: none;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.breadcrumb-item.active {
+    text-decoration: underline;
+    color: #506e61;
+    font-weight: bold;
+}
