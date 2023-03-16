@@ -1,5 +1,6 @@
 import React from 'react';
-import { unknownSVG } from './svgImports';
+import { unknownSVG } from './SvgImports';
+import './Functions.css'
 
 const unknown = <img className='svg unknown' src={unknownSVG} />;
 

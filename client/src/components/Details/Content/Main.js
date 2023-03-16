@@ -1,8 +1,9 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import { searchSVG, bookSVG } from '../Content/svgImports';
-import Zoom from 'react-medium-image-zoom'
-import 'react-medium-image-zoom/dist/styles.css'
+import { searchSVG, bookSVG } from './SvgImports';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
+import './Main.css'
 
 
 
@@ -15,7 +16,7 @@ function Main({ plant }) {
 
     return (
         <>
-            <div className="main">
+            <div id="main">
                 <Row key={plant.scientific_name} className='main-card'>
                     <Col className='main-cropped cropped image'>
                         <img className='svg search-img-svg' src={searchSVG} />

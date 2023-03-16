@@ -1,5 +1,5 @@
 import React from "react";
-import { distribSVG } from "../Content/svgImports";
+import { distribSVG } from "../Content/SvgImports";
 
 function Distribution({ plant }) {
     let distributions = [];

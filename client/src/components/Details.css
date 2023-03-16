@@ -3,133 +3,13 @@ html {
   margin: 2% 2%;
 }
 
-.main-cropped {
-  position: relative;
-}
-
-.search-img-svg {
-  position: absolute;
-  top: 8px;
-  right: 42%;
-  font-size: x-large;
-  z-index: 1;
-  filter:
-  drop-shadow(-1px -1px 0px #283630) 
-    drop-shadow(2px -1px 0px #283630) 
-    drop-shadow(2px 2px 0px #283630)
-    drop-shadow(-1px 2px 0px #283630);
-}
-
-hr {
-  background-color: #506e61;
-  border: none;
-  display: block;
-  height: 2px;
-  margin: 1.5rem 0;
-}
-
-.sidebar {
-  position: fixed;
-  bottom: 0;
-  overflow-y: auto;
-  transition: 1s;
-}
-
-.sidebar li a {
-  font-size: large;
-  /* decreased font size to fit more content */
-  cursor: pointer;
-  display: block;
-  /* added display block to show full link */
-  padding: 0.5rem 0;
-  /* added padding for better spacing */
-}
-
-.content {
-  width: 65%;
-  /* decreased width to fit more content */
-  margin-left: 20%;
-  /* increased margin to fit larger sidebar */
-  margin-right: 5%;
-}
-
 ul {
   list-style-type: none;
 }
 
-.svg,
-.unknown {
+.svg {
   height: 1em;
 }
-
-.unknown {
-  position: relative;
-  top: 2px;
-  color: red;
-}
-
-.main {
-  display: flex;
-}
-
-.main-card {
-  display: contents;
-}
-
-.main-card-text {
-  margin-left: 20px;
-  margin-top: 3%;
-}
-
-.sub-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: auto;
-  margin-right: 40%;
-}
-
-.sub-second-col p {
-  margin-bottom: 21px;
-}
-
-.div-scale {
-  flex: none;
-  width: 25%;
-}
-
-.scale-item {
-  min-height: 15px;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.scale-container {
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin: auto 10px;
-}
-
-.gray-step {
-  position: relative;
-  width: 10px;
-  height: 10px;
-  background-color: #90b6a6;
-  margin: 0 1px;
-  transform-style: preserve-3d;
-}
-
-.green-step {
-  position: relative;
-  width: 10px;
-  height: 10px;
-  background-color: #283630;
-  margin: 0 1px;
-  transform-style: preserve-3d;
-}
-
 @media (pointer:none),
 (pointer:coarse) {
   .main {
@@ -137,6 +17,12 @@ ul {
   }
 
   .sidebar {
+    display: none;
+  }
+
+  .breadcrumb {
+    width: 0%;
+    margin-left: 0%;
     display: none;
   }
 

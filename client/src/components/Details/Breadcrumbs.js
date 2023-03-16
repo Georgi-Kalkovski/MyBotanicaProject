@@ -1,11 +1,11 @@
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
-import { Link, useLocation } from 'react-router-dom';
+import { Breadcrumb } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import './Breadcrumbs.css';
 
 function Breadcrumbs({ paths }) {
   return (
-    <Breadcrumb>
+    <Breadcrumb className='breadcrumb'>
       {paths.map((item, index) => (
         <span>
           <Link

@@ -1,7 +1,7 @@
 import React from "react";
-import { unknownCheck, scale, levelLength, lightLevels, atmHumLevels, soilHumLevels, soilNutriLevels, soilSalinityLevels, soilTextureLevels } from './functions';
+import { unknownCheck, scale, levelLength, lightLevels, atmHumLevels, soilHumLevels, soilNutriLevels, soilSalinityLevels, soilTextureLevels } from './Functions';
 import { Row, Col } from 'react-bootstrap';
-import { cloudsSVG, sunSVG, cookSVG, saltSVG, texture1SVG, texture2SVG, growingSVG, waterdropSVG, waterbucketSVG } from "../Content/svgImports";
+import { cloudsSVG, sunSVG, cookSVG, saltSVG, texture1SVG, texture2SVG, growingSVG, waterdropSVG, waterbucketSVG } from "./SvgImports";
 
 function Growing({ plant }) {
     let distributions = [];

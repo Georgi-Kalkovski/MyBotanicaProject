@@ -17,17 +17,16 @@ function Details() {
 
   const paths = [
     { label: 'Explore', url: '/' },
+    { label: '[[[Genus]]]', url: '/genus/${genus}' },
     { label: `${id.replace('_', ' ')}`, url: `/plants/${id}` },
-    { label: 'Subcategory', url: '/category/subcategory' },
-    { label: 'Current Page', url: '/category/subcategory/current' },
+    //{ label: 'Current Page', url: '/category/subcategory/current' },
   ];
 
   return (
-    <div className='details-main'>
+    <div>
       <Breadcrumbs paths={paths} />
       <Sidebar />
       <Content plant={plant} />
-
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { Col, Row } from 'react-bootstrap';
-import { unknownCheck, unknownVisibleCheck } from './functions';
-import { specSVG, flowerSVG, leafSVG, fruitSVG } from '../Content/svgImports';
+import { unknownCheck, unknownVisibleCheck } from './Functions';
+import { specSVG, flowerSVG, leafSVG, fruitSVG, unknownSVG } from './SvgImports';
 
 function Specifications({ plant }) {
     let distributions = [];
@@ -15,21 +15,19 @@ function Specifications({ plant }) {
                 <img className='svg' src={specSVG} />
                 <span> Specifications</span>
             </h2>
-            <Row key={plant.scientific_name} className='main-card'>
-                <p>{distributions[0]}</p>
-                <div className='sub-row'>
-                    <Col className='sub-first-col'>
-                        <p>Height: {unknownCheck(plant.average_height_cm)} cm average</p>
-                        <p>Growth habit: {unknownCheck(plant.growth_habit)}</p>
-                        <p>Duration: { }</p>
-                        <p>Edible part(s): {unknownCheck(plant.edible_part)}</p>
-                    </Col>
-                    <Col className='sub-second-col'>
-                        <p>{<img className='svg' src={flowerSVG} />} {unknownVisibleCheck(plant.flower_conspicuous)} {unknownCheck(plant.flower_color)} flowers</p>
-                        <p>{<img className='svg' src={leafSVG} />} {unknownCheck(plant.foliage_texture)} {unknownCheck(plant.foliage_color)} foliage</p>
-                        <p>{<img className='svg' src={fruitSVG} />} {unknownVisibleCheck(plant.fruit_conspicuous)} {unknownCheck(plant.fruit_color)} fruits</p>
-                    </Col>
-                </div>
+            <p>{distributions[0]}</p>
+            <Row className='sub-row'>
+                <Col className='sub-first-col'>
+                    <p>Height: {unknownCheck(plant.average_height_cm)} cm average</p>
+                    <p>Growth habit: {unknownCheck(plant.growth_habit)}</p>
+                    <p>Duration: {<img className='svg' src={unknownSVG} />}</p>
+                    <p>Edible part(s): {unknownCheck(plant.edible_part)}</p>
+                </Col>
+                <Col className='sub-second-col'>
+                    <p>{<img className='svg' src={flowerSVG} />} {unknownVisibleCheck(plant.flower_conspicuous)} {unknownCheck(plant.flower_color)} flowers</p>
+                    <p>{<img className='svg' src={leafSVG} />} {unknownCheck(plant.foliage_texture)} {unknownCheck(plant.foliage_color)} foliage</p>
+                    <p>{<img className='svg' src={fruitSVG} />} {unknownVisibleCheck(plant.fruit_conspicuous)} {unknownCheck(plant.fruit_color)} fruits</p>
+                </Col>
             </Row>
         </div>
     );
