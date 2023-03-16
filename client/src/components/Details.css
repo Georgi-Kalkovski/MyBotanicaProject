@@ -1,10 +1,23 @@
-body, html {
+body,
+html {
   margin: 2% 2%;
 }
 
-.details-main {
-  text-align: left;
-  margin-top: 3%;
+.main-cropped {
+  position: relative;
+}
+
+.search-img-svg {
+  position: absolute;
+  top: 8px;
+  right: 42%;
+  font-size: x-large;
+  z-index: 1;
+  filter:
+  drop-shadow(-1px -1px 0px #283630) 
+    drop-shadow(2px -1px 0px #283630) 
+    drop-shadow(2px 2px 0px #283630)
+    drop-shadow(-1px 2px 0px #283630);
 }
 
 hr {
@@ -16,7 +29,6 @@ hr {
 }
 
 .sidebar {
-  width: 20%; /* increased width to fit more content */
   position: fixed;
   bottom: 0;
   overflow-y: auto;
@@ -24,15 +36,20 @@ hr {
 }
 
 .sidebar li a {
-  font-size: large; /* decreased font size to fit more content */
+  font-size: large;
+  /* decreased font size to fit more content */
   cursor: pointer;
-  display: block; /* added display block to show full link */
-  padding: 0.5rem 0; /* added padding for better spacing */
+  display: block;
+  /* added display block to show full link */
+  padding: 0.5rem 0;
+  /* added padding for better spacing */
 }
 
 .content {
-  width: 65%; /* decreased width to fit more content */
-  margin-left: 20%; /* increased margin to fit larger sidebar */
+  width: 65%;
+  /* decreased width to fit more content */
+  margin-left: 20%;
+  /* increased margin to fit larger sidebar */
   margin-right: 5%;
 }
 

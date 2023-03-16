@@ -1,3 +1,4 @@
+import searchSVG from '../svg/search.svg';
 import bookSVG from '../svg/book.svg';
 import growingSVG from '../svg/growing.svg';
 import specSVG from '../svg/spec.svg';
@@ -18,6 +19,7 @@ import texture2SVG from '../svg/texture2.svg';
 import unknownSVG from '../svg/unknown.svg';
 
 export {
+    searchSVG,
     bookSVG,
     growingSVG,
     specSVG,
