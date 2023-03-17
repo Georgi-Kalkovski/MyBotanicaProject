@@ -12,10 +12,10 @@ function Search({ setCurrentPage, searchTerm, setSearchTerm, searchOption, setSe
   return (
     <div className="table-header">
       <h1 className='explore-header'>
-        <img className='svg' src={compassSVG} /> Explore
+        <img className='svg' src={compassSVG} alt='compassSVG'/> Explore
       </h1>
       <div className="search-box">
-        <img className='svg' src={searchSVG} />
+        <img className='svg' src={searchSVG} alt='searchSVG'/>
         <input
           className='search-input'
           type="text"

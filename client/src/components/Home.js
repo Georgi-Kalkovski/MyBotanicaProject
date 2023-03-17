@@ -13,8 +13,8 @@ function Home() {
 
   const search = window.location.pathname.split('/')[2];
   const option = window.location.pathname.split('/')[1];
-  
-  if (option == 'family' || option == 'genus') {
+
+  if (option === 'family' || option === 'genus') {
     localStorage.setItem('searchTerm', search);
     localStorage.setItem('searchOption', option);
   } else {

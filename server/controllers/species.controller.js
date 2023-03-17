@@ -30,32 +30,6 @@ async function getAllSpecies(req, res) {
   });
 }
 
-async function getFamily(req, res) {
-  const page = req.query.page || 1;
-  const limit = 20;
-  const startIndex = (page - 1) * limit;
-
-  const familyName = req.params.family;
-  const query = {};
-
-  let speciesQuery = Species.find({ family: familyName });
-  let countQuery = Species.countDocuments({});
-
-  if (familyName != '') {
-    speciesQuery = Species.find(query);
-    countQuery = Species.find(query).countDocuments();
-  }
-
-  const pagesCount = await countQuery;
-  const species = await speciesQuery.skip(startIndex).limit(20);
-
-  res.json({
-    totalPages: Math.ceil(pagesCount / limit),
-    currentPage: Number(page),
-    species: species,
-  });
-}
-
 async function getPlantByScientificName(req, res) {
   const plantName = req.params.scientific_name.replace('_', ' ');
   const plant = await Species.findOne({ scientific_name: plantName });
@@ -64,6 +38,5 @@ async function getPlantByScientificName(req, res) {
 
 module.exports = {
   getAllSpecies,
-  getFamily,
   getPlantByScientificName,
 };
