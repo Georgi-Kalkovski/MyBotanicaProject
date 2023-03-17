@@ -11,6 +11,17 @@ function Home() {
   const [searchTerm, setSearchTerm] = useState(localStorage.getItem('searchTerm') || '');
   const [searchOption, setSearchOption] = useState(localStorage.getItem('searchOption') || 'common_name');
 
+  const search = window.location.pathname.split('/')[2];
+  const option = window.location.pathname.split('/')[1];
+  
+  if (option == 'family' || option == 'genus') {
+    localStorage.setItem('searchTerm', search);
+    localStorage.setItem('searchOption', option);
+  } else {
+    localStorage.setItem('searchTerm', '');
+    localStorage.setItem('searchOption', 'common_name');
+  }
+
   useEffect(() => {
     localStorage.setItem('searchTerm', searchTerm);
     localStorage.setItem('searchOption', searchOption);
@@ -77,7 +88,7 @@ function Home() {
         <table className='species-container'>
           <Body species={species} />
         </table>
-        
+
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}

@@ -21,3 +21,7 @@
     color: #506e61;
     font-weight: bold;
 }
+
+#root > div > nav > ol > span:nth-child(3) > span{
+    display: none;
+  }

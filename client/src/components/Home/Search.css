@@ -6,7 +6,7 @@
 }
 
 .explore-header .svg {
-padding-right: 10px;
+    padding-right: 10px;
 }
 
 .search-input,
@@ -23,7 +23,8 @@ padding-right: 10px;
 .search-input {
     position: relative;
     margin-left: -7px;
-    text-indent: 12%;
+    padding-right: 40px;
+    padding-left: 40px;
 }
 
 .search-box .svg {
@@ -45,4 +46,20 @@ padding-right: 10px;
 
 .dropdown-option:hover {
     background-color: #283630;
+}
+
+.clear-button {
+    visibility: none;
+    position: relative;
+}
+
+.clear-icon {
+    visibility: visible;
+    position: absolute;
+    right: 15px;
+}
+
+.explore-link {
+    text-decoration: none;
+    color: #283630;
 }

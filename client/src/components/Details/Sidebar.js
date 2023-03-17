@@ -5,13 +5,13 @@ import './Sidebar.css';
 
 
 function Sidebar() {
-    const [topPosition, setTopPosition] = useState('10%');
+    const [topPosition, setTopPosition] = useState('5%');
 
     useEffect(() => {
         function handleScroll() {
             const currentPosition = window.pageYOffset;
             if (currentPosition < window.innerHeight * 0.1) {
-                setTopPosition(`${10 - currentPosition * 0.1}%`);
+                setTopPosition(`${5 - currentPosition * 0.1}%`);
             } else {
                 setTopPosition('0');
             }

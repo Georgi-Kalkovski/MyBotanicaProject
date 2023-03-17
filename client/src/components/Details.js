@@ -19,8 +19,6 @@ function Details() {
     { label: 'Explore', url: '/' },
     { label: `${plant.family}`, url: `/family/${plant.family}` },
     { label: `${plant.genus}`, url: `/genus/${plant.genus}` },
-    { label: `${id.replace('_', ' ')}`, url: `/species/${id}` },
-    //{ label: 'Current Page', url: '/category/subcategory/current' },
   ];
 
   return (
