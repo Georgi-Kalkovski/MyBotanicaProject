@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const config = require('./config/config');
-const routes = require('./routes/plants.routes');
+const routes = require('./routes/species.routes');
 
 const app = express();
 const port = config.PORT || 3001;

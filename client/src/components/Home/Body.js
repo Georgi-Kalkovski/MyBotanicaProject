@@ -10,12 +10,12 @@ import './Body.css';
 import foodSVG from './svg/food.svg'
 import vegetableSVG from './svg/vegetable.svg'
 
-function Body({ plants }) {
+function Body({ species }) {
   return (
     <Container className='cards'>
-      {plants.map((plant) => (
+      {species.map((plant) => (
 
-        <Link className='details-link' to={'plants/' + plant.scientific_name.replace(' ', '_')} key={plant.scientific_name}>
+        <Link className='details-link' to={'species/' + plant.scientific_name.replace(' ', '_')} key={plant.scientific_name}>
           <Row key={plant.scientific_name} className='card'>
             <Col className='cropped image'>
               {plant.image_url && (

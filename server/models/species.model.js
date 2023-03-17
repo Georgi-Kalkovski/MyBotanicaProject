@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const plantsSchema = new mongoose.Schema({
+const speciesSchema = new mongoose.Schema({
     id: String,
     scientific_name: String,
     rank: String,
@@ -57,6 +57,6 @@ const plantsSchema = new mongoose.Schema({
     url_wikipedia_en: String
 });
 
-const Plants = mongoose.model('Plants', plantsSchema, 'Plants');
+const Species = mongoose.model('Species', speciesSchema, 'Plants');
 
-module.exports = Plants;
+module.exports = Species;

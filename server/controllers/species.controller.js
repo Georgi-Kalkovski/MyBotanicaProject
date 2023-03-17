@@ -1,6 +1,6 @@
-const Plants = require('../models/plants.model');
+const Species = require('../models/species.model');
 
-async function getAllPlants(req, res) {
+async function getAllSpecies(req, res) {
 
   const page = req.query.page || 1;
   const limit = 20;
@@ -12,31 +12,31 @@ async function getAllPlants(req, res) {
 
   query[searchOption] = new RegExp(searchTerm, "i");
 
-  let plantsQuery = Plants.find({});
-  let countQuery = Plants.countDocuments({});
+  let speciesQuery = Species.find({});
+  let countQuery = Species.countDocuments({});
 
   if (searchTerm != '') {
-    plantsQuery = Plants.find(query);
-    countQuery = Plants.find(query).countDocuments();
+    speciesQuery = Species.find(query);
+    countQuery = Species.find(query).countDocuments();
   }
 
   const pagesCount = await countQuery;
-  const plants = await plantsQuery.skip(startIndex).limit(20);
+  const species = await speciesQuery.skip(startIndex).limit(20);
 
   res.json({
     totalPages: Math.ceil(pagesCount / limit),
     currentPage: Number(page),
-    plants: plants,
+    species: species,
   });
 }
 
 async function getPlantByScientificName(req, res) {
   const plantName = req.params.scientific_name.replace('_', ' ');
-  const plant = await Plants.findOne({ scientific_name: plantName });
+  const plant = await Species.findOne({ scientific_name: plantName });
   res.json({ plant: plant });
 }
 
 module.exports = {
-  getAllPlants,
+  getAllSpecies,
   getPlantByScientificName,
 };

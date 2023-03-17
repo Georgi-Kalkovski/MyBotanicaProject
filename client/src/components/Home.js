@@ -5,7 +5,7 @@ import Pagination from './Home/Pagination';
 import './Home.css';
 
 function Home() {
-  const [plants, setPlants] = useState([]);
+  const [species, setSpecies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState();
   const [searchTerm, setSearchTerm] = useState(localStorage.getItem('searchTerm') || '');
@@ -17,10 +17,10 @@ function Home() {
   }, [searchTerm, searchOption]);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api/plants?page=${currentPage}&searchTerm=${searchTerm}&searchOption=${searchOption}`)
+    fetch(`http://localhost:3001/api?page=${currentPage}&searchTerm=${searchTerm}&searchOption=${searchOption}`)
       .then((res) => res.json())
       .then((data) => {
-        setPlants(data.plants);
+        setSpecies(data.species);
         setTotalPages(data.totalPages);
       })
       .catch((err) => console.log(err));
@@ -44,7 +44,7 @@ function Home() {
 
   const renderPageButtons = () => {
     const buttons = [];
-    if (plants.length > 0) {
+    if (species.length > 0) {
       for (let i = 1; i <= totalPages; i++) {
         if (i === currentPage) {
           buttons.push(<span className="current-page" key={i}>{i}</span>);
@@ -75,7 +75,7 @@ function Home() {
         />
 
         <table className='species-container'>
-          <Body plants={plants} />
+          <Body species={species} />
         </table>
         
         <Pagination

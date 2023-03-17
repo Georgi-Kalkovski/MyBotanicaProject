@@ -10,15 +10,16 @@ function Details() {
   let [plant, setPlant] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api/plants/${id}`)
+    fetch(`http://localhost:3001/api/species/${id}`)
       .then((res) => res.json())
       .then((data) => setPlant(data.plant));
   }, [id]);
 
   const paths = [
     { label: 'Explore', url: '/' },
-    { label: '[[[Genus]]]', url: '/genus/${genus}' },
-    { label: `${id.replace('_', ' ')}`, url: `/plants/${id}` },
+    { label: `${plant.family}`, url: `/family/${plant.family}` },
+    { label: `${plant.genus}`, url: `/genus/${plant.genus}` },
+    { label: `${id.replace('_', ' ')}`, url: `/species/${id}` },
     //{ label: 'Current Page', url: '/category/subcategory/current' },
   ];
 
