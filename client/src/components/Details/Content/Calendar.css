@@ -1,0 +1,28 @@
+#calendar {
+    padding-bottom: 15px;
+}
+
+.calendar-table>thead>tr>th {
+    padding-left: 10px;
+}
+
+.row-growth,
+.row-bloom,
+.row-fruit {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.green-month {
+    transform: scale(1.1, 0.5);
+    background-color: #506e61;
+}
+
+.start-month {
+    border-radius: 25px 0 0 25px;
+}
+
+.end-month {
+    border-radius: 0 25px 25px 0;
+}

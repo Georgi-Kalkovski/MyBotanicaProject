@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import SideLink from './Sidebar/SideLink'
-import { specSVG, growingSVG, imagesSVG, distribSVG, synonymsSVG } from './Content/SvgImports';
+import { SideLink, UrlLink } from './Sidebar/SideLink'
+import { specSVG, growingSVG, imagesSVG, distribSVG, synonymsSVG, linkSVG, tagSVG, calendarSVG } from './Content/SvgImports';
 import './Sidebar.css';
 
 
-function Sidebar() {
+function Sidebar({ plant }) {
     const [topPosition, setTopPosition] = useState('5%');
 
     useEffect(() => {
@@ -24,13 +24,28 @@ function Sidebar() {
     return (
         <div className="sidebar" style={{ top: topPosition }}>
             <ul>
-                <SideLink link='Main' />
-                <SideLink link='Specifications' linkSVG={specSVG} />
-                <SideLink link='Growing' linkSVG={growingSVG} />
-                <SideLink link='Images' linkSVG={imagesSVG} />
-                <SideLink link='Distribution' linkSVG={distribSVG} />
-                <SideLink link='Synonyms' linkSVG={synonymsSVG} />
-                <SideLink link='[[[Model]]]'/>
+                <SideLink name='Main' />
+                <SideLink name='Specifications' svg={specSVG} />
+                <SideLink name='Calendar' svg={calendarSVG} />
+                <SideLink name='Growing' svg={growingSVG} />
+                <SideLink name='Images' svg={imagesSVG} />
+                {plant.distributions ? <SideLink name='Distribution' svg={distribSVG} /> : ''}
+                {plant.common_names ? <SideLink name='Common Names' svg={tagSVG} /> : ''}
+                {plant.synonyms ? <SideLink name='Synonyms' svg={synonymsSVG} /> : ''}
+                <SideLink name='Links' svg={linkSVG} />
+                <SideLink name='[[[Model]]]' />
+
+                <span className='links-span'>LINKS</span>
+
+                <UrlLink name='Usda' svg={linkSVG} link={plant.url_usda} />
+                <UrlLink name='Tropicos' svg={linkSVG} link={plant.url_tropicos} />
+                <UrlLink name='Tela Botanica' svg={linkSVG} link={plant.url_tela_botanica} />
+                <UrlLink name='Powo' svg={linkSVG} link={plant.url_powo} />
+                <UrlLink name='Plantnet' svg={linkSVG} link={plant.url_plantnet} />
+                <UrlLink name='Gbif' svg={linkSVG} link={plant.url_gbif} />
+                <UrlLink name='Openfarm' svg={linkSVG} link={plant.url_openfarm} />
+                <UrlLink name='Catminat' svg={linkSVG} link={plant.url_catminat} />
+                <UrlLink name='Wikipedia En' svg={linkSVG} link={plant.url_wikipedia_en} />
             </ul>
         </div>
     );

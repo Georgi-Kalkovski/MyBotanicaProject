@@ -22,5 +22,12 @@
 
 .main-card-text {
     margin-left: 20px;
-    margin-top: 3%;
+    margin-top: 1%;
+}
+
+.dark-color {
+    
+    margin-right: 1%;
+    font-size: smaller;
+    color: #283630;
 }

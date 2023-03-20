@@ -24,7 +24,7 @@ function Details() {
   return (
     <div>
       <Breadcrumbs paths={paths} />
-      <Sidebar />
+      <Sidebar plant={plant} />
       <Content plant={plant} />
     </div>
   );

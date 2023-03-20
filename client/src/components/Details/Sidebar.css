@@ -1,13 +1,25 @@
 .sidebar {
-    position: fixed;
-    bottom: 0;
-    overflow-y: auto;
-    transition: 1s;
-  }
-  
-  .sidebar li a {
-    font-size: large;
-    cursor: pointer;
-    display: block;
-    padding: 0.5rem 0;
-  }
+  position: fixed;
+  bottom: 0;
+  overflow-y: auto;
+  transition: 1s;
+}
+
+.sidebar li a {
+  font-size: large;
+  cursor: pointer;
+  display: block;
+  padding: 0.5rem 0;
+}
+
+.links-span {
+  font-size: small !important;
+}
+
+.sidebar-link {
+  text-decoration: none;
+}
+
+.link-text {
+  color: #283630;
+}

@@ -1,4 +1,7 @@
 import searchSVG from '../svg/search.svg';
+import linkSVG from '../svg/link.svg';
+import tagSVG from '../svg/tag.svg';
+import calendarSVG from '../svg/calendar.svg';
 import bookSVG from '../svg/book.svg';
 import growingSVG from '../svg/growing.svg';
 import specSVG from '../svg/spec.svg';
@@ -20,6 +23,9 @@ import unknownSVG from '../svg/unknown.svg';
 
 export {
     searchSVG,
+    linkSVG,
+    tagSVG,
+    calendarSVG,
     bookSVG,
     growingSVG,
     specSVG,
@@ -37,5 +43,5 @@ export {
     cookSVG,
     saltSVG,
     texture1SVG,
-    texture2SVG
+    texture2SVG,
 };

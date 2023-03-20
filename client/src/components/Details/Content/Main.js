@@ -28,7 +28,10 @@ function Main({ plant }) {
                         <h2>
                             {plant.scientific_name}
                         </h2>
-                        <h3>{commonName}</h3>
+                        <h3><span className='dark-color'>Common Name:</span> {commonName}</h3>
+                        <h3><span className='dark-color'>Genus:</span> {plant.genus}</h3>
+                        <h3><span className='dark-color'>Family:</span> {plant.family}</h3>
+                        <h3><span className='dark-color'>Family Common:</span> {plant.family_common_name}</h3>
                         <p><img className='svg' src={bookSVG} /> {plant.author} {plant.year} - {plant.bibliography}</p>
                     </Col>
                 </Row>

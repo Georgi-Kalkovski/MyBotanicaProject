@@ -4,18 +4,12 @@ import { Row, Col } from 'react-bootstrap';
 import { cloudsSVG, sunSVG, cookSVG, saltSVG, texture1SVG, texture2SVG, growingSVG, waterdropSVG, waterbucketSVG } from "./SvgImports";
 
 function Growing({ plant }) {
-    let distributions = [];
-
     let light = lightLevels[plant.light] || lightLevels['-1'];
     let atmHum = atmHumLevels[plant.atmospheric_humidity] || atmHumLevels['-1'];
     let soilHum = soilHumLevels[plant.ground_humidity] || soilHumLevels['-1'];
     let soilNutri = soilNutriLevels[plant.soil_nutriments] || soilNutriLevels['-1'];
     let soilSalinity = soilSalinityLevels[plant.soil_salinity] || soilSalinityLevels['-1'];
     let soilTexture = soilTextureLevels[plant.soil_salinity] || soilTextureLevels['-1'];
-
-    if (plant.distributions) {
-        distributions = plant.distributions.split(',');
-    }
 
     return (
         <>
@@ -54,12 +48,8 @@ function Growing({ plant }) {
                         <p>{scale(texture1SVG, levelLength(atmHumLevels), '', texture2SVG)}</p>
                     </Col>
                 </Row>
-
-                <h3>Calendar</h3>
-                <p>[[[Calendar]]]</p>
-
             </div>
         </>
     );
 }
-export default Growing
+export default Growing;
