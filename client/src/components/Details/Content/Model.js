@@ -20,12 +20,12 @@ function Model({ plant }) {
                 <p>✅Foliage Texture: {plant.foliage_texture}</p>
                 <p>✅Fruit Color: {plant.fruit_color}</p>
                 <p>✅Fruit Conspicuous: {plant.fruit_conspicuous}</p>
-                <p>Fruit Months: {plant.fruit_months}</p>
-                <p>Bloom Months: {plant.bloom_months}</p>
+                <p>✅Fruit Months: {plant.fruit_months}</p>
+                <p>✅Bloom Months: {plant.bloom_months}</p>
                 <p>✅Ground Humidity: {plant.ground_humidity}</p>
                 <p>Growth Form: {plant.growth_form}</p>
                 <p>✅Growth Habit: {plant.growth_habit}</p>
-                <p>Growth Months: {plant.growth_months}</p>
+                <p>✅Growth Months: {plant.growth_months}</p>
                 <p>Growth Rate: {plant.growth_rate}</p>
                 <p>✅Edible Part: {plant.edible_part}</p>
                 <p>✅Vegetable: {plant.vegetable}</p>

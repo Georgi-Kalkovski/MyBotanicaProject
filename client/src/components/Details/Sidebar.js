@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { SideLink, UrlLink } from './Sidebar/SideLink'
-import { specSVG, growingSVG, imagesSVG, distribSVG, synonymsSVG, linkSVG, tagSVG, calendarSVG } from './Content/SvgImports';
+import { specSVG, growingSVG, imagesSVG, distribSVG, synonymsSVG, linkSVG, tagSVG, calendarSVG, topSVG } from './Content/SvgImports';
 import './Sidebar.css';
 
 
 function Sidebar({ plant }) {
-    const [topPosition, setTopPosition] = useState('5%');
+    const [topPosition, setTopPosition] = useState('0%');
 
     useEffect(() => {
         function handleScroll() {
@@ -24,9 +24,9 @@ function Sidebar({ plant }) {
     return (
         <div className="sidebar" style={{ top: topPosition }}>
             <ul>
-                <SideLink name='Main' />
+                <SideLink name='TOP' svg={topSVG}/>
+                {plant.growth_months || plant.bloom_months || plant.fruit_months ? <SideLink name='Calendar' svg={calendarSVG} /> : ''}
                 <SideLink name='Specifications' svg={specSVG} />
-                <SideLink name='Calendar' svg={calendarSVG} />
                 <SideLink name='Growing' svg={growingSVG} />
                 <SideLink name='Images' svg={imagesSVG} />
                 {plant.distributions ? <SideLink name='Distribution' svg={distribSVG} /> : ''}

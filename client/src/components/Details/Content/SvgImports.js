@@ -1,5 +1,6 @@
 import searchSVG from '../svg/search.svg';
 import linkSVG from '../svg/link.svg';
+import topSVG from '../svg/top.svg';
 import tagSVG from '../svg/tag.svg';
 import calendarSVG from '../svg/calendar.svg';
 import bookSVG from '../svg/book.svg';
@@ -24,6 +25,7 @@ import unknownSVG from '../svg/unknown.svg';
 export {
     searchSVG,
     linkSVG,
+    topSVG,
     tagSVG,
     calendarSVG,
     bookSVG,

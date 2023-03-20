@@ -5,7 +5,7 @@ import './Breadcrumbs.css';
 
 function Breadcrumbs({ paths }) {
   return (
-    <Breadcrumb className='breadcrumb'>
+    <Breadcrumb className='breadcrumb' id='top'>
       {paths.map((item, index) => (
         <span>
           <Link
