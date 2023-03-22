@@ -15,15 +15,15 @@ function Body({ species }) {
     <Container className='cards'>
       {species.map((plant) => (
 
-        <Link className='details-link' to={'species/' + plant.scientific_name.replace(' ', '_')} key={plant.scientific_name}>
+        <Link className='details-link' to={'species/' + plant.scientific_name.replaceAll(' ', '_')} key={plant.scientific_name}>
           <Row key={plant.scientific_name} className='card'>
             <Col className='cropped image'>
               {plant.image_url && (
-                <Image src={plant.image_url.replace('bs.floristic.org', 'bs.plantnet.org')} />
+                <Image src={plant.image_url.replaceAll('bs.floristic.org', 'bs.plantnet.org')} />
               )}
             </Col>
             <Col className='col-text'>
-              <h2>
+              <h2 className='home-text'>
                 {plant.edible !== "false" ? <img className='food-svg' src={foodSVG} /> : ''}
                 {plant.vegetable !== "false" ? <img className='vegetable-svg' src={vegetableSVG} /> : ''}
                 {plant.scientific_name}

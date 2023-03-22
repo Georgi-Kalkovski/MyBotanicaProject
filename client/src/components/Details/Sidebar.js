@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { SideLink, UrlLink } from './Sidebar/SideLink'
-import { specSVG, growingSVG, imagesSVG, distribSVG, synonymsSVG, linkSVG, tagSVG, calendarSVG, topSVG } from './Content/SvgImports';
+import { specSVG, growingSVG, imagesSVG, distribSVG, synonymsSVG, linkSVG, tagSVG, calendarSVG, topSVG, plantingSVG } from './Content/SvgImports';
 import './Sidebar.css';
 
 
@@ -24,16 +24,19 @@ function Sidebar({ plant }) {
     return (
         <div className="sidebar" style={{ top: topPosition }}>
             <ul>
-                <SideLink name='TOP' svg={topSVG}/>
-                {plant.growth_months || plant.bloom_months || plant.fruit_months ? <SideLink name='Calendar' svg={calendarSVG} /> : ''}
+                <SideLink name='TOP' svg={topSVG} />
+                {plant.growth_months
+                    || plant.bloom_months
+                    || plant.fruit_months
+                    ? <SideLink name='Calendar' svg={calendarSVG} /> : ''}
                 <SideLink name='Specifications' svg={specSVG} />
                 <SideLink name='Growing' svg={growingSVG} />
-                <SideLink name='Images' svg={imagesSVG} />
+                {/* <SideLink name='Images' svg={imagesSVG} /> */}
                 {plant.distributions ? <SideLink name='Distribution' svg={distribSVG} /> : ''}
                 {plant.common_names ? <SideLink name='Common Names' svg={tagSVG} /> : ''}
                 {plant.synonyms ? <SideLink name='Synonyms' svg={synonymsSVG} /> : ''}
                 <SideLink name='Links' svg={linkSVG} />
-                <SideLink name='[[[Model]]]' />
+                {/* <SideLink name='[[[Model]]]' />
 
                 <span className='links-span'>LINKS</span>
 
@@ -45,7 +48,7 @@ function Sidebar({ plant }) {
                 <UrlLink name='Gbif' svg={linkSVG} link={plant.url_gbif} />
                 <UrlLink name='Openfarm' svg={linkSVG} link={plant.url_openfarm} />
                 <UrlLink name='Catminat' svg={linkSVG} link={plant.url_catminat} />
-                <UrlLink name='Wikipedia En' svg={linkSVG} link={plant.url_wikipedia_en} />
+                <UrlLink name='Wikipedia En' svg={linkSVG} link={plant.url_wikipedia_en} /> */}
             </ul>
         </div>
     );

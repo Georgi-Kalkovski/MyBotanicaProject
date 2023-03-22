@@ -9,7 +9,6 @@ function Distribution({ plant }) {
     }
     return (
         <>
-            {/* DISTRIBUTION */}
             <div id="distribution">
                 <h2>
                     <img className='svg' src={distribSVG} />

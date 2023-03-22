@@ -1,8 +1,41 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { unknownSVG } from './SvgImports';
 import './Functions.css'
 
 const unknown = <img className='svg unknown' src={unknownSVG} />;
+const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
+
+function splitMonths(plantMonths) {
+    return plantMonths ? plantMonths.split(',') : [];
+}
+
+function monthsNames() {
+    const monthsArr = [];
+    for (let i = 0; i < 12; i++) {
+        monthsArr.push(<th>{months[i]}</th>);
+    }
+    return monthsArr;
+}
+
+function monthsTemplate({ name, arr }) {
+    const monthsArr = [];
+    monthsArr.push(<td>{name}</td>);
+    for (let i = 0; i < 12; i++) {
+        if (!arr.includes(months[i])) {
+            monthsArr.push(<td className="grey-month"></td>);
+        } else {
+            if (arr[0] === months[i]) {
+                monthsArr.push(<td className="green-month start-month"></td>);
+            } else if (arr[arr.length - 1] === months[i]) {
+                monthsArr.push(<td className="green-month end-month"></td>);
+            } else {
+                monthsArr.push(<td className="green-month"></td>);
+            }
+        }
+    }
+    return monthsArr;
+}
 
 function unknownCheck(checking) {
     return checking === '' ? unknown : checking;
@@ -14,7 +47,7 @@ function unknownVisibleCheck(checking) {
 
 function scale(svg1, num, current, svg2) {
     const steps = [];
-    
+
     for (let i = 0; i < parseInt(num); i++) {
 
         if (parseInt(current) === i) {
@@ -39,6 +72,19 @@ function scale(svg1, num, current, svg2) {
 function levelLength(level) {
     const numVariants = Object.keys(level).length;
     return numVariants;
+}
+
+function UrlLink({ name, svg, link }) {
+    if (link) {
+        return (
+            <Link to={link} smooth={true} className='sidebar-link'>
+                <p>
+                    {svg ? <img className='svg content-links' src={svg} /> : ''}
+                    <span className='content-links'> {name}</span>
+                </p>
+            </Link>
+        );
+    } else { return null; }
 }
 
 const lightLevels = {
@@ -127,10 +173,14 @@ const soilTextureLevels = {
 }
 
 export {
+    splitMonths,
+    monthsNames,
+    monthsTemplate,
     unknownCheck,
     unknownVisibleCheck,
     scale,
     levelLength,
+    UrlLink,
     lightLevels,
     atmHumLevels,
     soilHumLevels,

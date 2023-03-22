@@ -1,22 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {UrlLink} from './Functions';
 import { linkSVG } from '../Content/SvgImports';
 
 
 function Links({ plant }) {
-
-    function UrlLink({ name, svg, link }) {
-        if (link) {
-            return (
-                    <Link to={link} smooth={true} className='sidebar-link'>
-                        <p>
-                            {svg ? <img className='svg content-links' src={svg} /> : ''}
-                            <span className='content-links'> {name}</span>
-                        </p>
-                    </Link>
-            );
-        } else { return null; }
-    }
 
     return (
         <div id="links">

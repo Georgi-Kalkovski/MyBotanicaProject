@@ -29,12 +29,16 @@
   margin-bottom: 21px;
 }
 
+.p-content-links div {
+  display: flex;
+}
+
 .content-links {
   color: #283630;
   text-decoration: underline;
 }
 
-.content-links p {
+.content-links a {
   font-size: initial;
   font-weight: 100;
 }

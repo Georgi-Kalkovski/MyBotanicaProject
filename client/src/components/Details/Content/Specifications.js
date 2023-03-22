@@ -19,7 +19,10 @@ function Specifications({ plant }) {
             <Row className='sub-row'>
                 <Col className='sub-first-col'>
                     <p>Height: {unknownCheck(plant.average_height_cm)} cm average</p>
+                    <p>Minimum root depth: {unknownCheck(plant.minimum_root_depth_cm)} cm</p>
                     <p>Growth habit: {unknownCheck(plant.growth_habit)}</p>
+                    <p>Growth form: {unknownCheck(plant.growth_form)}</p>
+                    <p>Growth rate: {unknownCheck(plant.growth_rate)}</p>
                     <p>Duration: {<img className='svg' src={unknownSVG} />}</p>
                     <p>Edible part(s): {unknownCheck(plant.edible_part)}</p>
                 </Col>

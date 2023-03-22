@@ -13,7 +13,6 @@ function Growing({ plant }) {
 
     return (
         <>
-            {/* GROWING */}
             <div id="growing">
                 <h2>
                     <img className='svg' src={growingSVG} />
@@ -24,8 +23,6 @@ function Growing({ plant }) {
                         <p>Light: {unknownCheck(light)}</p>
                         <p>Atmospheric Humidity: {unknownCheck(atmHum)}</p>
                         <p>Ph: Best between {unknownCheck(plant.ph_minimum)} and {unknownCheck(plant.ph_maximum)}</p>
-                        <p>[[[Precipitations: Best between unknown and unknown]]]</p>
-                        <p>[[[Temperature: Best between unknown°C and unknown°C]]]</p>
                     </Col>
                     <Col className='sub-second-col'>
                         <p>{scale(cloudsSVG, levelLength(lightLevels), plant.light, sunSVG)}</p>

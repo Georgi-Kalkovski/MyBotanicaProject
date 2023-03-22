@@ -45,5 +45,5 @@ export {
     cookSVG,
     saltSVG,
     texture1SVG,
-    texture2SVG,
+    texture2SVG
 };

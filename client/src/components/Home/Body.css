@@ -53,3 +53,7 @@ h3 {
     width: 0.8em;
     padding-right: 10px;
 }
+
+.home-text {
+    font-size: larger;
+}

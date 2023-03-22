@@ -9,13 +9,18 @@ function Search({ setCurrentPage, searchTerm, setSearchTerm, searchOption, setSe
     setCurrentPage(1);
   };
 
+  function renderOption(label) {
+    let value = label.replaceAll(' ', '_').toLowerCase();
+    return <option key={value} value={value}>{label}</option>;
+  };
+
   return (
     <div className="table-header">
       <h1 className='explore-header'>
-        <img className='svg' src={compassSVG} alt='compassSVG'/> Explore
+        <img className='svg' src={compassSVG} alt='compassSVG' /> Explore
       </h1>
       <div className="search-box">
-        <img className='svg' src={searchSVG} alt='searchSVG'/>
+        <img className='svg' src={searchSVG} alt='searchSVG' />
         <input
           className='search-input'
           type="text"
@@ -33,11 +38,11 @@ function Search({ setCurrentPage, searchTerm, setSearchTerm, searchOption, setSe
           value={searchOption}
           onChange={(e) => { setSearchOption(e.target.value); setCurrentPage(1) }}
         >
-          <option value="common_names">Common Name</option>
-          <option value="scientific_name">Scientific Name</option>
-          <option value="genus">Genus</option>
-          <option value="family">Family</option>
-          <option value="family_common_name">Family Common Name</option>
+          {renderOption("Common Name")}
+          {renderOption("Scientific Name")}
+          {renderOption("Genus")}
+          {renderOption("Family")}
+          {renderOption("Family Common Name")}
         </select>
       </div>
     </div>
