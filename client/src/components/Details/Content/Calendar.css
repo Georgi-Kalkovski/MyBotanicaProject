@@ -19,10 +19,21 @@
     background-color: #506e61;
 }
 
+
+.start-end-month {
+    border-radius: 25px 25px 25px 25px;
+}
+
 .start-month {
     border-radius: 25px 0 0 25px;
 }
 
 .end-month {
     border-radius: 0 25px 25px 0;
+}
+
+@media (min-width: 768px) {
+    .calendar-mobile {
+        display: none;
+    }
 }

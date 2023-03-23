@@ -104,12 +104,16 @@ function monthsTemplate({ name, arr }) {
         if (!arr.includes(months[i])) {
             monthsArr.push(<td className="grey-month"></td>);
         } else {
-            if (arr[0] === months[i]) {
-                monthsArr.push(<td className="green-month start-month"></td>);
-            } else if (arr[arr.length - 1] === months[i]) {
-                monthsArr.push(<td className="green-month end-month"></td>);
+            if (arr[0] === months[i] && arr[arr.length - 1] === months[i]) {
+                monthsArr.push(<td className="green-month start-end-month"></td>);
             } else {
-                monthsArr.push(<td className="green-month"></td>);
+                if (arr[0] === months[i]) {
+                    monthsArr.push(<td className="green-month start-month"></td>);
+                } else if (arr[arr.length - 1] === months[i]) {
+                    monthsArr.push(<td className="green-month end-month"></td>);
+                } else {
+                    monthsArr.push(<td className="green-month"></td>);
+                }
             }
         }
     }

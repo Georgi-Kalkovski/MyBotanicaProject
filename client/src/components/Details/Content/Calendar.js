@@ -7,7 +7,6 @@ function Calendar({ plant }) {
     const growthM = splitMonths(plant.growth_months);
     const bloomM = splitMonths(plant.bloom_months);
     const fruitM = splitMonths(plant.fruit_months);
-
     return (
         <>
             <div id="calendar">
@@ -15,6 +14,11 @@ function Calendar({ plant }) {
                     <img className='svg' src={calendarSVG} alt="calendarSvg" />
                     <span> Calendar</span>
                 </h2>
+                <div className="calendar-mobile">
+                    {growthM.length > 0 ? <span>Growing: {growthM.join(', ')}</span> : ''}
+                    {bloomM.length > 0 ? <span>Blooming: {bloomM.join(', ')}</span> : ''}
+                    {fruitM.length > 0 ? <span>Fruits: {fruitM.join(', ')}</span> : ''}
+                </div>
                 <table className="calendar-table">
                     <thead>
                         <tr>
