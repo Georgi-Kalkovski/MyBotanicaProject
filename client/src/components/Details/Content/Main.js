@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import { searchSVG, bookSVG, unknownSVG } from './SvgImports';
+import { searchSVG, bookSVG } from './SvgImports';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 import './Main.css'
