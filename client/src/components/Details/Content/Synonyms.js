@@ -11,7 +11,7 @@ function Synonyms({ plant }) {
     return (
         <>
             <div id="synonyms">
-                <h2>
+                <h2 className="spacing">
                     <img className='svg' src={synonymsSVG} />
                     <span> Synonyms</span>
                 </h2>

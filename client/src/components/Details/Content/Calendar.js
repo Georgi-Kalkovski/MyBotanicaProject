@@ -11,7 +11,7 @@ function Calendar({ plant }) {
     return (
         <>
             <div id="calendar">
-                <h2>
+                <h2 className="spacing">
                     <img className='svg' src={calendarSVG} alt="calendarSvg" />
                     <span> Calendar</span>
                 </h2>

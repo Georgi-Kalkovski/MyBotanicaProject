@@ -11,7 +11,7 @@ function Specifications({ plant }) {
 
     return (
         <div id="specifications">
-            <h2>
+            <h2 className="spacing">
                 <img className='svg' src={specSVG} />
                 <span> Specifications</span>
             </h2>

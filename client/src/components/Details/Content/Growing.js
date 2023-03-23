@@ -14,7 +14,7 @@ function Growing({ plant }) {
     return (
         <>
             <div id="growing">
-                <h2>
+                <h2 className="spacing">
                     <img className='svg' src={growingSVG} />
                     <span> Growing</span>
                 </h2>

@@ -11,7 +11,7 @@ function CommonNames({ plant }) {
     return (
         <>
             <div id="common names">
-                <h2>
+                <h2 className="spacing">
                     <img className='svg' src={tagSVG} />
                     <span> Common Names</span>
                 </h2>

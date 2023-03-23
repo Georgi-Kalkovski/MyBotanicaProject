@@ -2,7 +2,7 @@ function Model({ plant }) {
     return (
         <>
             <div id="[[[model]]]">
-                <h2>[[[Model]]]</h2>
+                <h2 className="spacing">[[[Model]]]</h2>
                 <p>Id: {plant.id}</p>
                 <p>✅Scientific Name: {plant.scientific_name}</p>
                 <p>Rank: {plant.rank}</p>

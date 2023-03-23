@@ -10,7 +10,7 @@ function Distribution({ plant }) {
     return (
         <>
             <div id="distribution">
-                <h2>
+                <h2 className="spacing">
                     <img className='svg' src={distribSVG} />
                     <span> Distribution</span>
                 </h2>

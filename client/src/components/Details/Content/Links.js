@@ -7,7 +7,7 @@ function Links({ plant }) {
 
     return (
         <div id="links">
-            <h2>
+            <h2 className="spacing">
                 <img className='svg' src={linkSVG} />
                 <span> Links</span>
                 <p>
