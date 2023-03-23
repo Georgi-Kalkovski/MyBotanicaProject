@@ -14,10 +14,23 @@ ul {
 @media (pointer:none),
 (pointer:coarse) {
 
+
+  #top>ol>span:nth-child(2),
+  #top>ol>span:nth-child(3) {
+    display: none;
+  }
+
+
+
   #top {
-    width: 0;
-    margin: 0;
-    display: inline;
+    margin: auto;
+    width: 50%;
+    font-size: x-large;
+    font-weight: bold;
+  }
+
+  .breadcrumb-delimiter {
+    display: none;
   }
 
   .main-card {
@@ -53,5 +66,9 @@ ul {
 
   .calendar-table {
     display: none;
+  }
+
+  #main>div>div.main-cropped.cropped.image.col {
+    margin: 4%;
   }
 }
