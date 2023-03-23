@@ -1,36 +1,36 @@
 .div-scale {
-    flex: none;
-    width: 25%;
-  }
-  
-  .scale-item {
-    min-height: 15px;
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
-  
-  .scale-container {
-    display: flex;
-    align-items: center;
-    position: relative;
-    margin: auto 10px;
-  }
-  
-  .gray-step {
-    position: relative;
-    width: 10px;
-    height: 10px;
-    background-color: #90b6a6;
-    margin: 0 1px;
-    transform-style: preserve-3d;
-  }
-  
-  .green-step {
-    position: relative;
-    width: 10px;
-    height: 10px;
-    background-color: #283630;
-    margin: 0 1px;
-    transform-style: preserve-3d;
-  }
+  flex: none;
+  width: 25%;
+}
+
+.scale-item {
+  min-height: 15px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.scale-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: auto 10px;
+}
+
+.gray-step {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  background-color: #90b6a6;
+  margin: 0 1px;
+  transform-style: preserve-3d;
+}
+
+.green-step {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  background-color: #283630;
+  margin: 0 1px;
+  transform-style: preserve-3d;
+}

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function SideLink({ name, svg }) {
     return (
         <li>
-            <ScrollLink to={name.toLowerCase()} smooth={true}>
+            <ScrollLink to={name.toLowerCase()} smooth={true} className="hover-underline-animation">
                 {svg ? <img className='svg' src={svg} /> : ''}
                 <span> {name}</span>
             </ScrollLink>

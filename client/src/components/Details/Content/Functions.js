@@ -156,10 +156,10 @@ function levelLength(level) {
 function UrlLink({ name, svg, link }) {
     if (link) {
         return (
-            <Link to={link} smooth={true} className='sidebar-link'>
+            <Link to={link} smooth={true}>
                 <p>
-                    {svg ? <img className='svg content-links' src={svg} /> : ''}
-                    <span className='content-links'> {name}</span>
+                    {svg ? <img className='svg' src={svg} /> : ''}
+                    <span> {name}</span>
                 </p>
             </Link>
         );

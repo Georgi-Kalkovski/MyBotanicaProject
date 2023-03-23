@@ -12,7 +12,7 @@ function Breadcrumbs({ paths }) {
             key={index}
             tag="a"
             to={item.url}
-            className="breadcrumb-item"
+            className="breadcrumb-item hover-underline-animation"
           >
             {item.label}
           </Link>
