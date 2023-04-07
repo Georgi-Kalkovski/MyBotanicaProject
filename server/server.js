@@ -5,16 +5,8 @@ const config = require('./config/config');
 const routes = require('./routes/species.routes');
 
 const app = express();
-const corsOptions = {
-  origin: ['http://localhost:3001', 'https://thebookcase.onrender.com', 'http://thebookcase.onrender.com'],
-  optionsSuccessStatus: 200,
-  credentials: true,
-  methods: ['GET', 'PUT', 'POST', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  port: process.env.PORT || 10000 // Add this line to include the port property
-};
+const port = config.PORT || 10000;
 
-app.use(cors(corsOptions));
 mongoose.connect(config.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -27,7 +19,7 @@ db.once('open', async function () {
   console.log('Connected to MongoDB database');
 });
 
-app.use(cors(corsOptions )); // enable CORS
+app.use(cors()); // enable CORS
 
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to Terter application." });
@@ -41,6 +33,6 @@ app.post('/api', (req, res) => {
   res.send('Data received');
 });
 
-app.listen(corsOptions , () => {
-  console.log(`Server listening on port ${corsOptions.port }`);
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
 });

@@ -28,7 +28,7 @@ function Home() {
   }, [searchTerm, searchOption]);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api?page=${currentPage}&searchTerm=${searchTerm}&searchOption=${searchOption}`)
+    fetch(`http://localhost:10000/api?page=${currentPage}&searchTerm=${searchTerm}&searchOption=${searchOption}`)
       .then((res) => res.json())
       .then((data) => {
         setSpecies(data.species);

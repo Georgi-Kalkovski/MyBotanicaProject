@@ -10,7 +10,7 @@ function Details() {
   let [plant, setPlant] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api/species/${id}`)
+    fetch(`http://localhost:10000/api/species/${id}`)
       .then((res) => res.json())
       .then((data) => setPlant(data.plant));
   }, [id]);
