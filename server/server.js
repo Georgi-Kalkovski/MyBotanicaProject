@@ -19,10 +19,14 @@ db.once('open', async function () {
   console.log('Connected to MongoDB database');
 });
 
-app.use(cors()); // enable CORS
+const corsOptions = {
+  origin: ['http://localhost:3000', 'https://mybotanica-api.onrender.com'],
+};
 
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to Terter application." });
+app.use(cors(corsOptions)); // enable CORS
+
+app.get('/', (req, res) => {
+  res.json({ message: 'Welcome to Terter application.' });
 });
 
 app.use('/api', routes);
