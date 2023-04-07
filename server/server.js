@@ -20,7 +20,6 @@ db.once('open', async function () {
 });
 
 const corsOptions = 'https://mybotanica.onrender.com';
-};
 
 app.use(cors(corsOptions)); // enable CORS
 
