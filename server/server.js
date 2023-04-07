@@ -5,7 +5,7 @@ const config = require('./config/config');
 const routes = require('./routes/species.routes');
 
 const app = express();
-const port = config.PORT || 10000;
+const port = config.PORT || 3001;
 
 mongoose.connect(config.MONGODB_URI, {
   useNewUrlParser: true,
