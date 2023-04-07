@@ -20,7 +20,7 @@ db.once('open', async function () {
 });
 
 const corsOptions = {
-  origin: ['http://localhost:3000', 'https://mybotanica-api.onrender.com', 'http://mybotanica-api.onrender.com'],
+  origin: ['http://localhost:3000','http://mybotanica.onrender.com', 'https://mybotanica.onrender.com'],
 };
 
 app.use(cors(corsOptions)); // enable CORS
