@@ -1,0 +1,145 @@
+.footer-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between
+}
+
+.footer-project-name {
+	white-space: nowrap;
+	text-decoration: none;
+	font-size: small;
+	color: #283630;
+}
+
+.footer-project-name:hover {
+	transition: 0.3s;
+	color: #506e61;
+}
+
+.footer-mid {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.footer-creator {
+	font-size: small;
+}
+
+.footer-svg img {
+	filter: invert(15%) sepia(43%) saturate(256%) hue-rotate(102deg) brightness(95%) contrast(88%);
+	min-width: 2.3%;
+	width: 35px;
+	margin: 5px;
+}
+
+.footer-svg img:hover {
+	transition: 0.3s;
+	filter: invert(41%) sepia(21%) saturate(433%) hue-rotate(102deg) brightness(91%) contrast(89%);
+}
+
+.div-arrowUp {
+	width: 200px;
+	text-align: end;
+}
+
+.arrowUp {
+	text-decoration: none;
+	font-size: xx-large;
+}
+
+.arrowUp h3 {
+	color: #283630;
+}
+
+.arrowUp h3:hover {
+	transition: 0.3s;
+	color: #506e61;
+}
+
+/* footer {
+	position: fixed;
+	bottom: 0;
+    width: 100%;
+    line-height: 3;
+}
+
+#footerNav .container {
+	display: flex;
+	flex-direction: row;
+}
+
+#footerNav {
+	display: inline-block;
+}
+
+#footer nav ul {
+	display: contents;
+}
+
+#copyright {
+	position: absolute;
+	width: 44px;
+	color: #283630;
+	border-radius: 50%;
+	bottom: 10px;
+	left: 40px;
+	z-index: 11;
+	white-space: nowrap;
+}
+
+#contactMeText {
+    list-style-type: none;
+    position: absolute;
+	text-align: center;
+}
+
+.contactMe img {
+    filter: invert(15%) sepia(43%) saturate(256%) hue-rotate(102deg) brightness(95%) contrast(88%);
+	width: 30px
+}
+
+.contactMe img:hover {
+	filter: invert(15%) sepia(43%) saturate(256%) hue-rotate(102deg) brightness(95%) contrast(88%);
+}
+
+a {
+	color: #283630;
+	text-decoration: none;
+}
+
+a:hover {
+    color: #283630;
+	cursor: pointer;
+}
+
+.arrowUp {
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	
+	color: #283630;
+    border: 2px #283630 solid;
+	border-radius: 50%;
+	bottom: 20px;
+	right: 40px;
+	z-index: 11;
+	transition: 0.3s;
+}
+
+.arrowUp a {
+	transition: 0.3s;
+}
+
+.arrowUp:hover {
+	position: absolute;
+	height: 45px;
+	width: 45px;
+	color: #283630;
+    border: 3px #283630 solid;
+	border-radius: 50%;
+	bottom: 10px;
+	right: 35px;
+	z-index: 11;
+	transition: 0.3s;
+} */
