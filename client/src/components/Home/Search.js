@@ -17,7 +17,7 @@ function Search({ setCurrentPage, searchTerm, setSearchTerm, searchOption, setSe
   return (
     <div className="table-header">
       <h1 className='explore-header'>
-        <img className='svg' src={compassSVG} alt='compassSVG' /> Explore
+        <img className='svg' src={compassSVG} alt='compassSVG' /> MyBotanica
       </h1>
       <div className="search-box">
         <img className='svg' src={searchSVG} alt='searchSVG' />
