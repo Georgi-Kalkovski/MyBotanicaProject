@@ -19,8 +19,7 @@ db.once('open', async function () {
   console.log('Connected to MongoDB database');
 });
 
-const corsOptions = {
-  origin: ['http://localhost:3000','https://mybotanica.onrender.com', 'http://mybotanica.onrender.com'],
+const corsOptions = 'https://mybotanica.onrender.com';
 };
 
 app.use(cors(corsOptions)); // enable CORS
